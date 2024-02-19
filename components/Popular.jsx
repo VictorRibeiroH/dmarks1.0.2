@@ -1,11 +1,12 @@
 import { client } from '@/app/lib/sanity';
 import Link from 'next/link'
 import React from 'react'
+import ItemsCarousel from './ItemsCarousel';
 
 // puxando data
 
 const getData = async ()=> {
-    const query = `*[_type == 'product' && references(*[_type == 'category' && name == 'popular']._id, categories)]{
+    const query = `*[_type == 'product' && references(*[_type == 'category' && name == 'Popular']._id, categories)]{
         _id,
           name,
           description,
@@ -31,8 +32,8 @@ const Popular = async () => {
         <p className='text-center mb-[30px]'>
           Nossos produtos mais escolhidos
         </p>
-        <div>Carousel</div>
-        <Link href='/our-bikes'>
+        <ItemsCarousel bikes={bikes}/>
+        <Link href='/our-products'>
           <button>
             Veja todos nossos produtos
           </button>
