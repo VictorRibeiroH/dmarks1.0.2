@@ -23,7 +23,7 @@ const toastVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-green-200 text-primary uppercase",
+        default: "bg-green-200 text-primary uppercase ",
       },
     },
     defaultVariants: {
