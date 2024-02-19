@@ -1,8 +1,8 @@
 import React from 'react'
 
-const AddToCartBtn = () => {
+const AddToCartBtn = ({btnStyles}) => {
   return (
-    <button className='bg-accent btn'>Add To Cart Btn</button>
+    <button className={`${btnStyles}`}>Add To Cart Btn</button>
   )
 }
 

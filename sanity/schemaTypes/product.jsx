@@ -30,6 +30,14 @@ export default {
             of: [{type: 'image'}],
         },
         {
+            name: 'slug',
+            title: 'Product slug',
+            type: 'slug',
+            options: {
+                source :'name'
+            }
+        },
+        {
             name: 'categories',
             title: 'Categories',
             type: 'array',
