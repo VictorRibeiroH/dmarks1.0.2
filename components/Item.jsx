@@ -31,15 +31,26 @@ const Item = ({ bike }) => {
         </div>
         {/* btn */}
         <div className="absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center gap-[10px] opacity-0 group-hover:opacity-100">
-            <AddToCartBtn btnStyles='btn bg-accent'/>
-            <Link href={`/product/${bike.slug}`}>
-                <button className="btn-icon btn-primary">
-                    <CgEye />
-                </button>
-            </Link>
+          <AddToCartBtn
+             id={bike._id}
+            name={bike.name}
+            currency='USD'
+            description={bike.description}
+            images={bike.images}
+            price={bike.price}
+            btnStyles="btn-icon bg-accent"
+            icon={<CgShoppingBag />}
+          />
+          <Link href={`/product/${bike.slug}`}>
+            <button className="btn-icon btn-primary">
+              <CgEye />
+            </button>
+          </Link>
         </div>
       </div>
-      <h5 className="text-gray-400 font-semibold mb-2">{bike.categories[0].name}</h5>
+      <h5 className="text-gray-400 font-semibold mb-2">
+        {bike.categories[0].name}
+      </h5>
       <h4 className="mb-1">{bike.name}</h4>
       <div className="text-lg font-bold text-accent">R$ {bike.price}</div>
     </div>
