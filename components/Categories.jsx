@@ -17,7 +17,7 @@ const Categories = ({ bikes }) => {
           ? bikes
           : bike.categories.some((categ) => categ.name === category);
       const priceMatch = bike.price <= price;
-      return categoryMatch && priceMatch;
+      return categoryMatch;
     });
     setFilteredBikes(filtered);
   }, [category, price, bikes]);
@@ -67,7 +67,8 @@ const Categories = ({ bikes }) => {
               </div>
             </RadioGroup>
 
-            <div className="max-w-[max-w-56]">
+        {/* Filtro Preço */}
+            {/* <div className="max-w-[max-w-56]">
               <div className="text-lg mb-4 font-medium">
                 Preço max:{" "}
                 <span className="text-accent font-semibold ml-2">
@@ -89,7 +90,7 @@ const Categories = ({ bikes }) => {
                 step={1}
                 onValueChange={(val) => setPrice(val[0])}
               />
-            </div>
+            </div> */}
           </aside>
           {/* list */}
           <div className="w-full xl:w-[1050px] ml-auto">

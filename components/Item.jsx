@@ -41,11 +41,11 @@ const Item = ({ bike }) => {
             btnStyles="btn-icon bg-accent"
             icon={<CgShoppingBag />}
           />
-          <Link href={`/product/${bike.slug}`}>
+          {/* <Link href={`/product/${bike.slug}`}>
             <button className="btn-icon btn-primary">
               <CgEye />
             </button>
-          </Link>
+          </Link> */}
         </div>
       </div>
       <h5 className="text-gray-400 font-semibold mb-2">
