@@ -18,10 +18,10 @@ const Footer = () => {
           </div>
           {/* Socials */}
           <div className="flex gap-8 mx-auto text-[20px] text-white/60 mb-20">
-            <Link href="">
+            <Link href="https://www.facebook.com/dmarkslocacoesdemoveis/?locale=pt_BR" target="_blank">
               <RiFacebookFill />
             </Link>
-            <Link href="">
+            <Link href="https://www.instagram.com/dmarkslocacoes/" target="_blank">
               <RiInstagramFill />
             </Link>
           </div>
