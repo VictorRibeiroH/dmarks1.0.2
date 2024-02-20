@@ -9,7 +9,7 @@ const Hero = () => {
           {/* Imagem */}
           <div className="hidden xl:flex h-[650px] w-full absolute inset-0 z-0 opacity-50">
             <Image
-              src="/bg/bg-hero.png"
+              src="/bg/bg-hero-vf.jpg"
               layout="fill"
               objectFit="cover"
               alt="logo dmarks"
