@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
       <body className={rajdhani.variable}>
         <CartProvider>
           <Header />
-          <Hero />
+          {/* <Hero /> */}
           {children}
           <Toaster />
           <Footer />
