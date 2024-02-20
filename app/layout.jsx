@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CartProvider from "@/components/CartProvider";
 import { Toaster } from "@/components/ui/toaster";
+import Hero from "@/components/Hero";
 
 const rajdhani = Rajdhani({
   subsets: ['latin'],
@@ -22,11 +23,12 @@ export default function RootLayout({ children }) {
       <body className={rajdhani.variable}>
         <CartProvider>
           <Header />
+          {/* <Hero /> */}
           {children}
           <Toaster />
           <Footer />
         </CartProvider>
-        <div className="h-[2000px]"></div>
+        {/* <div className="h-[2000px]"></div> */}
       </body>
     </html>
   );
