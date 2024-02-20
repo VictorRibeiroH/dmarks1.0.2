@@ -52,7 +52,7 @@ const Item = ({ bike }) => {
         {bike.categories[0].name}
       </h5>
       <h4 className="mb-1">{bike.name}</h4>
-      <div className="text-lg font-bold text-accent">R$ {bike.price}</div>
+      {/* <div className="text-lg font-bold text-accent">R$ {bike.price}</div> */}
     </div>
   );
 };
