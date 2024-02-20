@@ -13,7 +13,7 @@ const Footer = () => {
               Fique ligado nas novidades
             </h2>
             <p className="text-white/60">
-              seja o primeiro a receber novos produtos, promoções, e muito mais!!
+              seja o primeiro a receber novos produtos, promoções, e muito mais!
             </p>
           </div>
           {/* Socials */}
