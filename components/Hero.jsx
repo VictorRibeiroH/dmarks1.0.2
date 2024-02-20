@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import SearchBar from "@/components/SearchBar"; // Importe o componente de SearchBar
 
 const Hero = () => {
   return (
@@ -9,7 +10,7 @@ const Hero = () => {
           {/* Imagem */}
           <div className="hidden xl:flex h-[650px] w-full absolute inset-0 z-0 opacity-50">
             <Image
-              src="/bg/bg-hero-vf.jpg"
+              src="/bg/bg-hhh.jpeg"
               layout="fill"
               objectFit="cover"
               alt="logo dmarks"
@@ -23,6 +24,8 @@ const Hero = () => {
             </h1> 
             <h2>Para feiras e eventos</h2> 
             <span className="text-lg text-center font-semibold">A satisfação do seu cliente é o melhor projeto para a sua empresa</span>
+            {/* SearchBar */}
+            <SearchBar />
           </div>
         </div>
       </div>
