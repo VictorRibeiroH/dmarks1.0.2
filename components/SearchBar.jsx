@@ -4,7 +4,7 @@ const SearchBar = () => {
   return (
     <div className='relative w-full text-gray-600'>
         <input 
-            className='bg-gray-200 bg-opacity-50 h-10 px-5 pr-10 w-full rounded-full text-sm focus:outline-none'
+            className='bg-gray-200 bg-opacity-50 h-10 px-5 pr-10 w-full rounded-full text-sm focus:outline-none placeholder-black'
             placeholder="Qual mobiliário você está procurando?"
         />
 

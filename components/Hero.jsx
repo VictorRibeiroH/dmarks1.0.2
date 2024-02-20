@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import SearchBar from "@/components/SearchBar"; // Importe o componente de SearchBar
+import About from "./About";
 
 const Hero = () => {
   return (
@@ -27,7 +28,9 @@ const Hero = () => {
             {/* SearchBar */}
             <SearchBar />
           </div>
+          
         </div>
+        
       </div>
     </section>
   );
