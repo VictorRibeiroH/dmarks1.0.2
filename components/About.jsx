@@ -12,23 +12,20 @@ const About = () => {
             <span className="text-gray-500">
               <br />
               <br />
-              Uma empresa com mais de X ANOS de existência, a DMarks Locações nasceu
-              em X, sob o desafio de atender a exigente produção de eventos, a
-              partir do Sul, para todo o Brasil.
+              Fundada em 2002, na cidade de Curitiba/PR, a D'marks Locações é uma empresa
+              especializada em locação de móveis para feiras e eventos em geral, sendo uma das
+              pioneiras no ramo.
               <br />
               <br />
-              A DMarks busca aliar qualidade e variedade em móveis, acessórios
-              e equipamentos para eventos, de qualquer tipo, em ambientes funcionais
-              e decorativos. Com diversos modelos de estofados, mesas, cadeiras e
-              banquetas, a empresa possui também acessórios e equipamentos de
-              refrigeração e linha branca, que complementam a gama de produtos
-              disponíveis para locação.
+              A empresa trabalha com profissionais treinados, visando sempre a qualidade dos produtos
+              e serviços prestados. Nossa principal missão é atender e satisfazer as necessidades de nossos clientes,
+              buscando melhorar constantemente o atendimento e o serviço prestado, com profissionais capacitados e materiais de primera linha
               <br />
               <br />
-              Destacando-se pela agilidade no atendimento ao cliente, tanto na área
-              comercial quanto na expedição de materiais, a DMarks prima por métodos
-              flexíveis, adaptando-se à agenda dos eventos e garantindo a rapidez
-              esperada pelo mercado.
+              Para manter esse compromisso, a D'marks Locações, além de toda a estrutura
+              própria, possui um estoque amplo e variado e está sempre inovando com qualidade e bom
+              gosto, acompanhando as tendências do mercado, proporcionando aos seus clientes e 
+              parceiros a rentabilidade esperada e a certeza de bons negócios.
             </span>
           </h1>
         </div>
