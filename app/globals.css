@@ -62,3 +62,8 @@
   .swiper-pagination-bullet {
   @apply bg-accent;
 }
+
+
+.radio-item input[type="radio"] {
+  display: none;
+}

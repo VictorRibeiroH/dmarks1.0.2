@@ -29,12 +29,15 @@ const Footer = () => {
                   <Link href="/about">Sobre</Link>
                 </li>
                 <li>
-                  <Link href="#">Categoria 3</Link>
+                  <Link href="/contato">Contato</Link>
+                </li>
+                <li>
+                  <Link href="/portfolio">Portfolio</Link>
                 </li>
               </ul>
             </div>
             {/* Onde Estamos */}
-            <div style={{ marginLeft: '140px' }}>
+            <div style={{ marginLeft: '180px' }}>
               <h2 className="capitalize leading-tight mb-2 text-3xl">
                 Onde Estamos
               </h2>
