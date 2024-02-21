@@ -5,7 +5,9 @@ import { usePathname } from "next/navigation";
 const links = [
   { name: "Home", path: "/" },
   { name: "Nossos Produtos", path: "/produtos" },
-  { name: "Sobre", path: "/about" }
+  { name: "Sobre", path: "/about" },
+  { name: "Contato", path: "/contato" },
+  { name: "Portfolio", path: "/portfolio" }
 ];
 
 const Nav = ({ containerStyles }) => {
