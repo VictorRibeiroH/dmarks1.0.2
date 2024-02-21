@@ -4,7 +4,7 @@ import React from "react";
 const EventItem = ({ name, imageUrls }) => {
   return (
     <div style={{ flex: "0 0 auto", margin: "10px", textAlign: "center" }}>
-      <h2>{name}</h2>
+      <h2 className="text-2xl mt-5">{name}</h2>
       <div
         style={{
           display: "flex",
@@ -104,7 +104,7 @@ const PortfolioPage = () => {
 
   return (
     <div>
-      <h1 className="mt-4 text-4xl">Portfólio</h1>
+      <h1 className="mt-4 text-4xl text-center">Portfólio</h1>
       <div
         style={{
           display: "flex",
