@@ -22,21 +22,23 @@ const Item = ({ bike }) => {
               Popular
             </div>
           )}
-          <Image
-            src={urlFor(bike.images[0]).url()}
-            width={240}
-            height={147}
-            alt=""
-          />
+          {bike.images && bike.images.length > 0 && ( // Check if images exist and is not empty
+            <Image
+              src={urlFor(bike.images[0]).url()}
+              width={240}
+              height={147}
+              alt=""
+            />
+          )}
         </div>
         {/* btn */}
         <div className="absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center gap-[10px] opacity-0 group-hover:opacity-100">
           <AddToCartBtn
-             id={bike._id}
+            id={bike._id}
             name={bike.name}
             currency='USD'
             description={bike.description}
-            images={bike.images}
+            images={bike.images} // Pass images if available
             price={bike.price}
             btnStyles="btn-icon bg-accent"
             icon={<CgShoppingBag />}
