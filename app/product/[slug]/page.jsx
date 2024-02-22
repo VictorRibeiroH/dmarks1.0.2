@@ -60,7 +60,7 @@ const ProductDetails = async ({ params }) => {
 
             {/* Info */}
 
-            <div className="bg-pink-100 flex flex-col gap-3">
+            <div className=" flex flex-col gap-3">
               <div className="flex gap-2">
                 <PackageCheck size={20} className="text-accent"/>
                 <p>Entrega em todo Sul do Brasil</p>
