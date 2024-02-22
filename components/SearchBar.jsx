@@ -17,7 +17,7 @@ const SearchBar = ({ handleSearch }) => {
   };
 
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center hidden md:flex">
       <form
         className="relative w-[100%] max-w-[700px] text-gray-600"
         onSubmit={handleSubmit}

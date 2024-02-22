@@ -45,7 +45,7 @@ const Categories = ({ bikes }) => {
       <div className="container mx-auto">
         <div className="flex flex-col">
           <SearchBar handleSearch={handleSearch} />
-          <aside className="w-full p-4 mb-8 xl:w-[300px] xl:h-[84vh] xl:fixed bottom-0" style={{position: 'sticky'}}>
+          <aside className="w-full p-4 mb-8 xl:w-[300px] xl:h-[84vh] xl:fixed bottom-0 hidden md:block" style={{position: 'sticky'}}>
             <RadioGroup
               defaultValue="all"
               className="flex flex-col gap-6 mb-12"

@@ -17,6 +17,7 @@ const Hero = () => {
               objectFit="cover"
               alt="logo dmarks"
               quality={100}
+              className="w-full h-full object-cover"
             />
           </div>
           {/* Texto */}

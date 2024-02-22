@@ -7,7 +7,6 @@ import {
   RiWhatsappLine,
 } from "react-icons/ri";
 import { FaClock } from "react-icons/fa";
-
 import { Input } from "./ui/input";
 
 const Footer = () => {
@@ -16,7 +15,7 @@ const Footer = () => {
       <div className="container mx-auto">
         <div className="flex flex-col gap-9">
           {/* Categorias */}
-          <div className="flex flex-row gap-4 justify-between">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 justify-between">
             <div>
               <h2 className="capitalize leading-tight mb-2 text-3xl">
                 Categorias
@@ -37,11 +36,11 @@ const Footer = () => {
               </ul>
             </div>
             {/* Onde Estamos */}
-            <div style={{ marginLeft: '180px' }}>
+            <div>
               <h2 className="capitalize leading-tight mb-2 text-3xl">
                 Onde Estamos
               </h2>
-              <div className="flex flex-col gap-2 text-white/60">
+              <div className="flex flex-col gap-2 text-white/60 ml-auto">
                 <div className="flex items-start">
                   <RiMapPinLine className="mr-2 mt-1" />
                   Av. Rancho Alegre, 207 - Barracão B <br />
@@ -66,10 +65,16 @@ const Footer = () => {
                 Siga Nossas Redes Sociais
               </h2>
               <div className="flex flex-col gap-4 text-[18px] text-white/60 mb-20">
-                <Link href="https://www.facebook.com/dmarkslocacoesdemoveis/?locale=pt_BR" target="_blank">
+                <Link
+                  href="https://www.facebook.com/dmarkslocacoesdemoveis/?locale=pt_BR"
+                  target="_blank"
+                >
                   <span>Facebook</span>
                 </Link>
-                <Link href="https://www.instagram.com/dmarkslocacoes/" target="_blank">
+                <Link
+                  href="https://www.instagram.com/dmarkslocacoes/"
+                  target="_blank"
+                >
                   <span>Instagram</span>
                 </Link>
               </div>
