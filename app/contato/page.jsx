@@ -20,6 +20,7 @@ const Page = () => {
         </div>
       </form>
       <a href="https://wa.me/5541991625742?text=Ol%C3%A1%2C+vim+pelo+site+e+gostaria+de+cota%C3%A7%C3%A3o+dos+produtos%3A+" target='_blank' className="block mt-4 w-full bg-green-500 text-white py-2 px-4 rounded-md transition duration-300 text-center">Contate-nos via WhatsApp</a>
+      <a href="mailto:dmarks@dmsrks.com.br" className="block mt-4 w-full bg-blue-500 text-white py-2 px-4 rounded-md transition duration-300 text-center">Contate-nos via Email</a>
     </div>
   )
 }
