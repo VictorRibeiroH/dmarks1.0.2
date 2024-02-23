@@ -1,4 +1,6 @@
-import { useState } from 'react';
+"use client";
+
+import { useState } from "react";
 import { urlFor } from "@/app/lib/sanity";
 import Image from "next/image";
 import { CgEye, CgShoppingBag } from "react-icons/cg";
@@ -26,7 +28,7 @@ const Item = ({ bike }) => {
               Popular
             </div>
           )}
-          {bike.images && bike.images.length > 0 && ( // Check if images exist and is not empty
+          {bike.images && bike.images.length > 0 && (
             <div onClick={toggleModal} style={{ cursor: "pointer" }}>
               <Image
                 src={urlFor(bike.images[0]).url()}
@@ -42,14 +44,18 @@ const Item = ({ bike }) => {
           <AddToCartBtn
             id={bike._id}
             name={bike.name}
-            currency='USD'
+            currency="USD"
             description={bike.description}
-            images={bike.images} // Pass images if available
+            images={bike.images}
             price={bike.price}
             btnStyles="btn-icon bg-accent"
             icon={<CgShoppingBag />}
           />
-          <button onClick={toggleModal} className="btn-icon btn-primary" style={{ cursor: "pointer" }}>
+          <button
+            onClick={toggleModal}
+            className="btn-icon btn-primary"
+            style={{ cursor: "pointer" }}
+          >
             <CgEye />
           </button>
         </div>
@@ -58,15 +64,33 @@ const Item = ({ bike }) => {
         {bike.categories[0].name}
       </h5>
       <h4 className="mb-1">{bike.name}</h4>
-      {/* <div className="text-lg font-bold text-accent">R$ {bike.price}</div> */}
       {showModal && (
-        <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-75 flex justify-center items-center z-50" onClick={toggleModal}>
-          <div className="relative">
+        <div
+          className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-75 flex justify-center items-center z-50"
+          onClick={toggleModal}
+        >
+          <div className="bg-white p-8 rounded-lg flex flex-col items-center">
             <Image
               src={urlFor(bike.images[0]).url()}
               width={400}
               height={250}
               alt=""
+            />
+            <h2 className="text-2xl font-semibold my-4">{bike.name}</h2>
+            <p className="text-gray-700 mb-4">{bike.description}</p>
+            <AddToCartBtn
+              id={bike._id}
+              name={bike.name}
+              currency="USD"
+              description={bike.description}
+              images={bike.images}
+              price={bike.price}
+              btnStyles="btn-primary btn btn-accent"
+              icon={
+                <>
+                  <CgShoppingBag /> Adicione ao seu carrinho
+                </>
+              }
             />
           </div>
         </div>

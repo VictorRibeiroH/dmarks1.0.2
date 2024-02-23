@@ -1,90 +1,76 @@
-import { client, urlFor } from "@/app/lib/sanity";
+"use client";
+
+// app/product/[slug]/page.jsx
+import { useState } from 'react';
+import dynamic from "next/dynamic"; // Importa a função dynamic
+import { urlFor } from "@/app/lib/sanity";
 import Image from "next/image";
-import AddToCartBtn from "@/components/AddToCartBtn";
-import Link from "next/link";
+import { CgEye } from "react-icons/cg";
 
-import {
-  Bike,
-  Clock,
-  PackageCheck,
-  RefreshCw,
-  ChevronLeft,
-} from "lucide-react";
+const AddToCartBtn = dynamic(() => import("@/components/AddToCartBtn")); // Importa AddToCartBtn dinamicamente
 
-const getData = async (slug) => {
-  const query = `*[_type == 'product' && slug.current == '${slug}'][0] {
-    _id,
-    images,
-    price,
-    price_id,
-    name,
-    description,
-    "slug": slug.current,
-    "category": categories->{name}
-  }`;
-  const data = await client.fetch(query);
-  return data;
-};
+const Item = ({ bike }) => {
+  const popularBikeCat = bike.categories.find(
+    (bike) => bike.name === "Popular"
+  );
 
+  const [showModal, setShowModal] = useState(false);
 
-const ProductDetails = async ({ params }) => {
-  const bike = await getData(params.slug);
-  console.log(bike);
+  const toggleModal = () => {
+    setShowModal(!showModal);
+  };
+
   return (
-    <section className="pt-24 pb-32">
-      <div className="container mx-auto">
-        <div className="flex flex-col xl:flex-row gap-14">
-          <div className="xl:flex-1 h-[460px] bg-primary/5 xl:w-[700px] xl:h-[540px] flex justify-center items-center">
-            <Image
-              src={urlFor(bike.images[0]).url()}
-              width={473}
-              height={290}
-              priority
-              alt=""
-            />
-          </div>
-          {/* Texto */}
-          <div className= "flex-1 flex flex-col justify-center items-start gap-10">
-            <Link href="/produtos" className="flex items-center gap-2 font-semibold">
-              <ChevronLeft size={20} />
-              Voltar
-            </Link>
-            <div className="flex flex-col gap-6 items-start">
-              <div>
-                <h3>{bike.name}</h3>
-                <p className="text-lg font-semibold">{bike.description}</p>
-                <AddToCartBtn
-                  text="Adicionar ao carrinho"
-                  btnStyles="btn btn-accent"
+    <div className="group">
+      <div className="border h-[328px] mb-5 p-4 overflow-hidden relative">
+        <div className="bg-primary/5 w-full h-full group-hover:bg-primary/10 transition-all duration-300 flex justify-center items-center">
+          {/* Badge */}
+          {popularBikeCat && (
+            <div className="absolute top-8 left-8 bg-accent text-white px-3 text-sm uppercase font-medium">
+              Popular
+            </div>
+          )}
+          {bike.images &&
+            bike.images.length > 0 && ( // Check if images exist and is not empty
+              <div onClick={toggleModal} style={{ cursor: "pointer" }}>
+                <Image
+                  src={urlFor(bike.images[0]).url()}
+                  width={240}
+                  height={147}
+                  alt=""
                 />
               </div>
-
-            {/* Info */}
-
-            <div className=" flex flex-col gap-3">
-              <div className="flex gap-2">
-                <PackageCheck size={20} className="text-accent"/>
-                <p>Entrega em todo Sul do Brasil</p>
-              </div>
-              {/* <div className="flex gap-2">
-                <RefreshCw size={20} className="text-accent"/>
-                <p>Sim</p>
-              </div> */}
-              <div className="flex gap-2">
-                <Bike size={20} className="text-accent"/>
-                <p>Entrega gratuita</p>
-              </div>
-              <div className="flex gap-2">
-                <Clock size={20} className="text-accent"/>
-                <p>Entrega rápida</p>
-              </div>
+            )}
+        </div>
+      </div>
+      <h5 className="text-gray-400 font-semibold mb-2">
+        {bike.categories[0].name}
+      </h5>
+      <h4 className="mb-1">{bike.name}</h4>
+      {/* <div className="text-lg font-bold text-accent">R$ {bike.price}</div> */}
+      {showModal && (
+        <div
+          className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-75 flex justify-center items-center z-50"
+          onClick={toggleModal}
+        >
+          <div className="bg-white p-6 rounded-lg max-w-lg flex items-center">
+            <div className="mr-6">
+              <Image
+                src={urlFor(bike.images[0]).url()}
+                width={200}
+                height={200}
+                alt=""
+              />
             </div>
+            <div>
+              <h2 className="text-xl font-bold mb-2">{bike.name}</h2>
+              <p className="text-base mb-4">{bike.description}</p>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      )}
+    </div>
   );
 };
 
-export default ProductDetails;
+export default Item;
