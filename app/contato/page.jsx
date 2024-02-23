@@ -10,17 +10,13 @@ const Page = () => {
   };
 
   const handleWhatsAppClick = () => {
-    // Aqui você pode adicionar lógica para enviar a mensagem via WhatsApp
-    // Este exemplo apenas exibe a mensagem no console
-    console.log('Mensagem via WhatsApp:', message);
+    // Abre o link do WhatsApp com a mensagem preenchida
+    window.open(`https://wa.me/5541991625742?text=${encodeURIComponent(message)}`, '_blank');
   };
 
   const handleEmailClick = () => {
-    // Aqui você pode adicionar lógica para enviar a mensagem via email
-    // Este exemplo apenas exibe a mensagem no console
-    console.log('Mensagem via Email:', message);
-    // Você também pode redirecionar para um link de email com o assunto e corpo preenchidos
-    // window.location.href = `mailto:dmarks@dmarks.com.br?subject=Assunto do Email&body=${encodeURIComponent(message)}`
+    // Abre o cliente de email padrão com o email preenchido
+    window.location.href = `mailto:dmarks@dmarks.com.br?subject=Assunto do Email&body=${encodeURIComponent(message)}`
   };
 
   return (
