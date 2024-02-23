@@ -79,13 +79,31 @@ const Categories = ({ bikes }) => {
                   value="Acessórios"
                   id="Acessórios"
                   onClick={() => handleCategoryChange("Acessórios")}
-                  className="radio-item" // Adicione uma classe para estilizar
+                  className="radio-item"
                   style={{ display: "none" }}
                 />
                 <SiAccenture />
-                <label className="cursor-pointer" htmlFor="Acessórios">
-                  Acessórios
+                <label
+                  className="cursor-pointer"
+                  htmlFor="Acessórios"
+                  style={{
+                    cursor: "pointer",
+                    textDecoration: "none",
+                  }}
+                >
+                  <span
+                    style={{
+                      transition: "color 0.3s ease-in-out",
+                    }}
+                  >
+                    Acessórios
+                  </span>
                 </label>
+                <style jsx>{`
+                  label:hover span {
+                    color: #1885ad;
+                  }
+                `}</style>
               </div>
 
               <div className="flex items-center space-x-2">
@@ -93,13 +111,31 @@ const Categories = ({ bikes }) => {
                   value="Aparadores"
                   id="Aparadores"
                   onClick={() => handleCategoryChange("Aparadores")}
-                  className="radio-item" // Adicione uma classe para estilizar
+                  className="radio-item"
                   style={{ display: "none" }}
                 />
-                <FaBuffer />
-                <label className="cursor-pointer" htmlFor="Aparadores">
-                  Aparadores
+                <FaBuffer  />
+                <label
+                  className="cursor-pointer"
+                  htmlFor="Aparadores"
+                  style={{
+                    cursor: "pointer",
+                    textDecoration: "none",
+                  }}
+                >
+                  <span
+                    style={{
+                      transition: "color 0.3s ease-in-out",
+                    }}
+                  >
+                    Aparadores
+                  </span>
                 </label>
+                <style jsx>{`
+                  label:hover span {
+                    color: #1885ad;
+                  }
+                `}</style>
               </div>
 
               <div className="flex items-center space-x-2">
@@ -107,27 +143,63 @@ const Categories = ({ bikes }) => {
                   value="Balcões"
                   id="Balcões"
                   onClick={() => handleCategoryChange("Balcões")}
-                  className="radio-item" // Adicione uma classe para estilizar
+                  className="radio-item"
                   style={{ display: "none" }}
                 />
-                <MdCountertops />
-                <label className="cursor-pointer" htmlFor="Balcões">
-                  Balcões
+                <MdCountertops  />
+                <label
+                  className="cursor-pointer"
+                  htmlFor="Balcões"
+                  style={{
+                    cursor: "pointer",
+                    textDecoration: "none",
+                  }}
+                >
+                  <span
+                    style={{
+                      transition: "color 0.3s ease-in-out",
+                    }}
+                  >
+                    Balcões
+                  </span>
                 </label>
+                <style jsx>{`
+                  label:hover span {
+                    color: #1885ad;
+                  }
+                `}</style>
               </div>
 
               <div className="flex items-center space-x-2">
                 <RadioGroupItem
-                  value="Balcões"
-                  id="Balcões"
-                  onClick={() => handleCategoryChange("Balcões")}
-                  className="radio-item" // Adicione uma classe para estilizar
+                  value="Banquetas"
+                  id="Banquetas"
+                  onClick={() => handleCategoryChange("Banquetas")}
+                  className="radio-item"
                   style={{ display: "none" }}
                 />
-                <MdChairAlt />
-                <label className="cursor-pointer" htmlFor="Balcões">
-                  Banquetas
+                <MdChairAlt  />
+                <label
+                  className="cursor-pointer"
+                  htmlFor="Banquetas"
+                  style={{
+                    cursor: "pointer",
+                    textDecoration: "none",
+                  }}
+                >
+                  <span
+                    style={{
+                      transition: "color 0.3s ease-in-out",
+                    }}
+                  >
+                    Banquetas
+                  </span>
                 </label>
+                <style jsx>{`
+                  label:hover span {
+                    color: #1885ad;
+                  }
+                `}</style>
               </div>
 
               <div className="flex items-center space-x-2">
@@ -135,13 +207,31 @@ const Categories = ({ bikes }) => {
                   value="Cadeiras"
                   id="Cadeiras"
                   onClick={() => handleCategoryChange("Cadeiras")}
-                  className="radio-item" // Adicione uma classe para estilizar
+                  className="radio-item"
                   style={{ display: "none" }}
                 />
-                <FaChair />
-                <label className="cursor-pointer" htmlFor="Cadeiras">
-                  Cadeiras
+                <FaChair  />
+                <label
+                  className="cursor-pointer"
+                  htmlFor="Cadeiras"
+                  style={{
+                    cursor: "pointer",
+                    textDecoration: "none",
+                  }}
+                >
+                  <span
+                    style={{
+                      transition: "color 0.3s ease-in-out",
+                    }}
+                  >
+                    Cadeiras
+                  </span>
                 </label>
+                <style jsx>{`
+                  label:hover span {
+                    color: #1885ad;
+                  }
+                `}</style>
               </div>
 
               <div className="flex items-center space-x-2">
@@ -149,13 +239,31 @@ const Categories = ({ bikes }) => {
                   value="Lixeiras"
                   id="Lixeiras"
                   onClick={() => handleCategoryChange("Lixeiras")}
-                  className="radio-item" // Adicione uma classe para estilizar
+                  className="radio-item"
                   style={{ display: "none" }}
                 />
-                <FaTrashAlt />
-                <label className="cursor-pointer" htmlFor="Lixeiras">
-                  Lixeiras
+                <FaTrashAlt  />
+                <label
+                  className="cursor-pointer"
+                  htmlFor="Lixeiras"
+                  style={{
+                    cursor: "pointer",
+                    textDecoration: "none",
+                  }}
+                >
+                  <span
+                    style={{
+                      transition: "color 0.3s ease-in-out",
+                    }}
+                  >
+                    Lixeiras
+                  </span>
                 </label>
+                <style jsx>{`
+                  label:hover span {
+                    color: #1885ad;
+                  }
+                `}</style>
               </div>
 
               <div className="flex items-center space-x-2">
@@ -163,13 +271,31 @@ const Categories = ({ bikes }) => {
                   value="Bistrôs"
                   id="Bistrôs"
                   onClick={() => handleCategoryChange("Bistrôs")}
-                  className="radio-item" // Adicione uma classe para estilizar
+                  className="radio-item"
                   style={{ display: "none" }}
                 />
-                <MdTableBar />
-                <label className="cursor-pointer" htmlFor="Bistrôs">
-                  Mesas Bistrôs
+                <MdTableBar  />
+                <label
+                  className="cursor-pointer"
+                  htmlFor="Bistrôs"
+                  style={{
+                    cursor: "pointer",
+                    textDecoration: "none",
+                  }}
+                >
+                  <span
+                    style={{
+                      transition: "color 0.3s ease-in-out",
+                    }}
+                  >
+                    Mesas Bistrôs
+                  </span>
                 </label>
+                <style jsx>{`
+                  label:hover span {
+                    color: #1885ad;
+                  }
+                `}</style>
               </div>
 
               <div className="flex items-center space-x-2">
@@ -177,13 +303,31 @@ const Categories = ({ bikes }) => {
                   value="Mesas"
                   id="Mesas"
                   onClick={() => handleCategoryChange("Mesas")}
-                  className="radio-item" // Adicione uma classe para estilizar
+                  className="radio-item"
                   style={{ display: "none" }}
                 />
-                <MdTableRestaurant />
-                <label className="cursor-pointer" htmlFor="Mesas">
-                  Mesas de Centro
+                <MdTableRestaurant  />
+                <label
+                  className="cursor-pointer"
+                  htmlFor="Mesas"
+                  style={{
+                    cursor: "pointer",
+                    textDecoration: "none",
+                  }}
+                >
+                  <span
+                    style={{
+                      transition: "color 0.3s ease-in-out",
+                    }}
+                  >
+                    Mesas de Centro
+                  </span>
                 </label>
+                <style jsx>{`
+                  label:hover span {
+                    color: #1885ad;
+                  }
+                `}</style>
               </div>
 
               <div className="flex items-center space-x-2">
@@ -191,13 +335,31 @@ const Categories = ({ bikes }) => {
                   value="Atendimento"
                   id="Atendimento"
                   onClick={() => handleCategoryChange("Atendimento")}
-                  className="radio-item" // Adicione uma classe para estilizar
+                  className="radio-item"
                   style={{ display: "none" }}
                 />
-                <SiAirtable />
-                <label className="cursor-pointer" htmlFor="Atendimento">
-                  Mesas de Reunião
+                <RiPlantFill />
+                <label
+                  className="cursor-pointer"
+                  htmlFor="Atendimento"
+                  style={{
+                    cursor: "pointer",
+                    textDecoration: "none",
+                  }}
+                >
+                  <span
+                    style={{
+                      transition: "color 0.3s ease-in-out",
+                    }}
+                  >
+                    Mesas de Reunião
+                  </span>
                 </label>
+                <style jsx>{`
+                  label:hover span {
+                    color: #1885ad;
+                  }
+                `}</style>
               </div>
 
               <div className="flex items-center space-x-2">
@@ -205,14 +367,31 @@ const Categories = ({ bikes }) => {
                   value="Poltronas"
                   id="Poltronas"
                   onClick={() => handleCategoryChange("Poltronas")}
-                  className="radio-item" // Adicione uma classe para estilizar
+                  className="radio-item"
                   style={{ display: "none" }}
                 />
-                <PiArmchairFill />
-
-                <label className="cursor-pointer" htmlFor="Poltronas">
-                  Poltronas
+                <RiPlantFill />
+                <label
+                  className="cursor-pointer"
+                  htmlFor="Poltronas"
+                  style={{
+                    cursor: "pointer",
+                    textDecoration: "none",
+                  }}
+                >
+                  <span
+                    style={{
+                      transition: "color 0.3s ease-in-out",
+                    }}
+                  >
+                    Poltronas
+                  </span>
                 </label>
+                <style jsx>{`
+                  label:hover span {
+                    color: #1885ad;
+                  }
+                `}</style>
               </div>
 
               <div className="flex items-center space-x-2">
@@ -220,75 +399,129 @@ const Categories = ({ bikes }) => {
                   value="Puffs"
                   id="Puffs"
                   onClick={() => handleCategoryChange("Puffs")}
-                  className="radio-item" // Adicione uma classe para estilizar
+                  className="radio-item"
                   style={{ display: "none" }}
                 />
-                <GiCube />
-                <label className="cursor-pointer" htmlFor="Puffs">
-                  Puffs
+                <RiPlantFill />
+                <label
+                  className="cursor-pointer"
+                  htmlFor="Puffs"
+                  style={{
+                    cursor: "pointer",
+                    textDecoration: "none",
+                  }}
+                >
+                  <span
+                    style={{
+                      transition: "color 0.3s ease-in-out",
+                    }}
+                  >
+                    Puffs
+                  </span>
                 </label>
+                <style jsx>{`
+                  label:hover span {
+                    color: #1885ad;
+                  }
+                `}</style>
               </div>
-              
 
               <div className="flex items-center space-x-2">
-  <RadioGroupItem
-    value="Plantas"
-    id="Plantas"
-    onClick={() => handleCategoryChange("Plantas")}
-    className="radio-item"
-    style={{ display: "none" }}
-  />
-  <RiPlantFill />
-  <label
-    className="cursor-pointer"
-    htmlFor="Plantas"
-    style={{ 
-      cursor: "pointer", 
-      textDecoration: "none",
-    }}
-  >
-    <span
-      style={{
-        transition: "color 0.3s ease-in-out"
-      }}
-    >
-      Plantas
-    </span>
-  </label>
-  <style jsx>{`
-    label:hover span {
-      color: #1885ad;
-    }
-  `}</style>
-</div>
+                <RadioGroupItem
+                  value="Plantas"
+                  id="Plantas"
+                  onClick={() => handleCategoryChange("Plantas")}
+                  className="radio-item"
+                  style={{ display: "none" }}
+                />
+                <RiPlantFill />
+                <label
+                  className="cursor-pointer"
+                  htmlFor="Plantas"
+                  style={{
+                    cursor: "pointer",
+                    textDecoration: "none",
+                  }}
+                >
+                  <span
+                    style={{
+                      transition: "color 0.3s ease-in-out",
+                    }}
+                  >
+                    Plantas
+                  </span>
+                </label>
+                <style jsx>{`
+                  label:hover span {
+                    color: #1885ad;
+                  }
+                `}</style>
+              </div>
 
-
+              
               <div className="flex items-center space-x-2">
                 <RadioGroupItem
                   value="Refrigeração"
                   id="Refrigeração"
                   onClick={() => handleCategoryChange("Refrigeração")}
-                  className="radio-item" // Adicione uma classe para estilizar
+                  className="radio-item"
                   style={{ display: "none" }}
                 />
-                <LuRefrigerator />
-                <label className="cursor-pointer" htmlFor="Refrigeração">
-                  Refrigeração
+                <RiPlantFill />
+                <label
+                  className="cursor-pointer"
+                  htmlFor="Refrigeração"
+                  style={{
+                    cursor: "pointer",
+                    textDecoration: "none",
+                  }}
+                >
+                  <span
+                    style={{
+                      transition: "color 0.3s ease-in-out",
+                    }}
+                  >
+                    Refrigeração
+                  </span>
                 </label>
+                <style jsx>{`
+                  label:hover span {
+                    color: #1885ad;
+                  }
+                `}</style>
               </div>
-
+             
+             
               <div className="flex items-center space-x-2">
                 <RadioGroupItem
                   value="Sofás"
                   id="Sofás"
                   onClick={() => handleCategoryChange("Sofás")}
-                  className="radio-item" // Adicione uma classe para estilizar
+                  className="radio-item"
                   style={{ display: "none" }}
                 />
-                <FaCouch />
-                <label className="cursor-pointer" htmlFor="Sofás">
-                  Sofás
+                <RiPlantFill />
+                <label
+                  className="cursor-pointer"
+                  htmlFor="Sofás"
+                  style={{
+                    cursor: "pointer",
+                    textDecoration: "none",
+                  }}
+                >
+                  <span
+                    style={{
+                      transition: "color 0.3s ease-in-out",
+                    }}
+                  >
+                    Sofás
+                  </span>
                 </label>
+                <style jsx>{`
+                  label:hover span {
+                    color: #1885ad;
+                  }
+                `}</style>
               </div>
             </RadioGroup>
           </aside>

@@ -30,7 +30,7 @@ module.exports = {
         },
         accent: {
           DEFAULT: "#1885ad",
-          hover: '#1885ad',
+          hover: '#5eb4d3',
         }
       },
       keyframes: {

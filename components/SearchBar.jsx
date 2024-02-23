@@ -19,7 +19,8 @@ const SearchBar = ({ handleSearch }) => {
   return (
     <div className="flex justify-center hidden md:flex">
       <form
-        className="relative w-[100%] max-w-[700px] text-gray-600"
+        className="relative w-[100%] max-w-[900px] text-gray-600"
+        style={{marginLeft: '206px'}}
         onSubmit={handleSubmit}
       >
         <input

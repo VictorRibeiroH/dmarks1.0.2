@@ -26,6 +26,7 @@ const getData = async (slug) => {
   return data;
 };
 
+
 const ProductDetails = async ({ params }) => {
   const bike = await getData(params.slug);
   console.log(bike);
@@ -44,7 +45,7 @@ const ProductDetails = async ({ params }) => {
           </div>
           {/* Texto */}
           <div className= "flex-1 flex flex-col justify-center items-start gap-10">
-            <Link href="/" className="flex items-center gap-2 font-semibold">
+            <Link href="/produtos" className="flex items-center gap-2 font-semibold">
               <ChevronLeft size={20} />
               Voltar
             </Link>

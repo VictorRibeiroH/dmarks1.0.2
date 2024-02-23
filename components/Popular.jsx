@@ -27,7 +27,7 @@ const Popular = async () => {
     const bikes = await getData();
 
     return (
-        <section className='py-2'>
+        <section className='py-2 mb-10 mt-8'>
             <div className='container mx-auto'>
                 <h2 className='text-center'>Mais populares</h2>
                 <p className='text-center mb-2 sm:mb-4 md:mb-6 lg:mb-8'>
