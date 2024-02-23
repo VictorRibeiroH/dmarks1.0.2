@@ -13,9 +13,10 @@ const Header = () => {
     <header className="bg-white shadow-lg sticky top-0 py-8 z-40">
       <div className="container mx-auto flex justify-between items-center">
         <Link href="/" className="hover:text-current">
-          <h1 className="text-[26px]">
-            <span className="text-accent">D</span>Marks
-          </h1>
+          <div className="flex items-center">
+            <img src="/dmarksLogo.png" alt="DMarks Logo"  style={{ height: '80px' }} className="h-8 mr-2" />
+          
+          </div>
         </Link>
         <div className="flex items-center gap-[26px]">
           <Nav containerStyles="flex gap-[36px]"/>
