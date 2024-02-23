@@ -85,10 +85,11 @@ const Item = ({ bike }) => {
               description={bike.description}
               images={bike.images}
               price={bike.price}
-              btnStyles="btn-primary btn btn-accent"
+              btnStyles="btn btn-accent"
               icon={
                 <>
-                  <CgShoppingBag /> Adicione ao seu carrinho
+                  {/* <CgShoppingBag />  */}
+                  Adicione ao seu carrinho
                 </>
               }
             />
