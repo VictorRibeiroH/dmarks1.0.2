@@ -10,7 +10,7 @@ const Hero = () => {
       <div className="container mx-auto">
         <div className="flex items-center justify-center h-full">
           {/* Imagem */}
-          <div className="hidden xl:flex h-[650px] w-full absolute inset-0 z-0 opacity-50">
+          <div className="hidden xl:flex h-[800px] w-full absolute inset-0 z-0 opacity-50">
             <Image
               src="/bg/bg-hhh.jpeg"
               layout="fill"
