@@ -7,7 +7,7 @@ const links = [
   { name: "Produtos", path: "/produtos" },
   { name: "Sobre", path: "/about" },
   { name: "Contato", path: "/contato" },
-  { name: "Portfolio", path: "/portfolio" }
+  // { name: "Portfolio", path: "/portfolio" }
 ];
 
 const Nav = ({ containerStyles }) => {

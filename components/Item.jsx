@@ -1,8 +1,6 @@
-"use client";
-
+import { useState } from 'react';
 import { urlFor } from "@/app/lib/sanity";
 import Image from "next/image";
-import Link from "next/link";
 import { CgEye, CgShoppingBag } from "react-icons/cg";
 
 import AddToCartBtn from "./AddToCartBtn";
@@ -11,6 +9,12 @@ const Item = ({ bike }) => {
   const popularBikeCat = bike.categories.find(
     (bike) => bike.name === "Popular"
   );
+
+  const [showModal, setShowModal] = useState(false);
+
+  const toggleModal = () => {
+    setShowModal(!showModal);
+  };
 
   return (
     <div className="group">
@@ -23,12 +27,14 @@ const Item = ({ bike }) => {
             </div>
           )}
           {bike.images && bike.images.length > 0 && ( // Check if images exist and is not empty
-            <Image
-              src={urlFor(bike.images[0]).url()}
-              width={240}
-              height={147}
-              alt=""
-            />
+            <div onClick={toggleModal} style={{ cursor: "pointer" }}>
+              <Image
+                src={urlFor(bike.images[0]).url()}
+                width={240}
+                height={147}
+                alt=""
+              />
+            </div>
           )}
         </div>
         {/* btn */}
@@ -43,11 +49,9 @@ const Item = ({ bike }) => {
             btnStyles="btn-icon bg-accent"
             icon={<CgShoppingBag />}
           />
-          <Link href={`/product/${bike.slug}`}>
-            <button className="btn-icon btn-primary">
-              <CgEye />
-            </button>
-          </Link>
+          <button onClick={toggleModal} className="btn-icon btn-primary" style={{ cursor: "pointer" }}>
+            <CgEye />
+          </button>
         </div>
       </div>
       <h5 className="text-gray-400 font-semibold mb-2">
@@ -55,6 +59,18 @@ const Item = ({ bike }) => {
       </h5>
       <h4 className="mb-1">{bike.name}</h4>
       {/* <div className="text-lg font-bold text-accent">R$ {bike.price}</div> */}
+      {showModal && (
+        <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-75 flex justify-center items-center z-50" onClick={toggleModal}>
+          <div className="relative">
+            <Image
+              src={urlFor(bike.images[0]).url()}
+              width={400}
+              height={250}
+              alt=""
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 };
