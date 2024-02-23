@@ -11,7 +11,7 @@ export default {
         {
             name: 'description',
             title: 'Product Description',
-            type: 'string'
+            type: 'richText'
         },
         {
             name: 'price',
