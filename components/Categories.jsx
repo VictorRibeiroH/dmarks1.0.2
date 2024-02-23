@@ -4,7 +4,12 @@ import React, { useState, useEffect } from "react";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { FaCouch, FaTrashAlt, FaChair, FaBuffer } from "react-icons/fa";
 import { PiArmchairFill } from "react-icons/pi";
-import { MdChairAlt, MdTableBar, MdTableRestaurant, MdCountertops } from "react-icons/md";
+import {
+  MdChairAlt,
+  MdTableBar,
+  MdTableRestaurant,
+  MdCountertops,
+} from "react-icons/md";
 import { BsCollectionFill } from "react-icons/bs";
 import { LuRefrigerator } from "react-icons/lu";
 import { SiAirtable, SiAccenture } from "react-icons/si";
@@ -16,7 +21,7 @@ import SearchBar from "./SearchBar";
 const Categories = ({ bikes }) => {
   const [category, setCategory] = useState("all");
   const [filteredBikes, setFilteredBikes] = useState([]);
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     const filtered = bikes.filter((bike) => {
@@ -25,9 +30,11 @@ const Categories = ({ bikes }) => {
           ? true
           : bike.categories.some((categ) => categ.name === category);
       const searchMatch =
-        (bike.name ?? '').toLowerCase().includes(searchTerm.toLowerCase()) ||
-        (bike.description ?? '').toLowerCase().includes(searchTerm.toLowerCase());
-      return categoryMatch && (searchTerm === '' || searchMatch);
+        (bike.name ?? "").toLowerCase().includes(searchTerm.toLowerCase()) ||
+        (bike.description ?? "")
+          .toLowerCase()
+          .includes(searchTerm.toLowerCase());
+      return categoryMatch && (searchTerm === "" || searchMatch);
     });
     setFilteredBikes(filtered);
   }, [category, bikes, searchTerm]);
@@ -45,7 +52,10 @@ const Categories = ({ bikes }) => {
       <div className="container mx-auto">
         <div className="flex flex-col">
           <SearchBar handleSearch={handleSearch} />
-          <aside className="w-full p-4 mb-8 xl:w-[300px] xl:h-[84vh] xl:fixed bottom-0 hidden md:block" style={{position: 'sticky'}}>
+          <aside
+            className="w-full p-4 mb-8 xl:w-[300px] xl:h-[84vh] xl:fixed bottom-0 hidden md:block"
+            style={{ position: "sticky" }}
+          >
             <RadioGroup
               defaultValue="all"
               className="flex flex-col gap-6 mb-12"
@@ -72,7 +82,7 @@ const Categories = ({ bikes }) => {
                   className="radio-item" // Adicione uma classe para estilizar
                   style={{ display: "none" }}
                 />
-                <SiAccenture  />
+                <SiAccenture />
                 <label className="cursor-pointer" htmlFor="Acessórios">
                   Acessórios
                 </label>
@@ -86,7 +96,7 @@ const Categories = ({ bikes }) => {
                   className="radio-item" // Adicione uma classe para estilizar
                   style={{ display: "none" }}
                 />
-                <FaBuffer  />
+                <FaBuffer />
                 <label className="cursor-pointer" htmlFor="Aparadores">
                   Aparadores
                 </label>
@@ -100,7 +110,7 @@ const Categories = ({ bikes }) => {
                   className="radio-item" // Adicione uma classe para estilizar
                   style={{ display: "none" }}
                 />
-                <MdCountertops  />
+                <MdCountertops />
                 <label className="cursor-pointer" htmlFor="Balcões">
                   Balcões
                 </label>
@@ -128,7 +138,7 @@ const Categories = ({ bikes }) => {
                   className="radio-item" // Adicione uma classe para estilizar
                   style={{ display: "none" }}
                 />
-                <FaChair  />
+                <FaChair />
                 <label className="cursor-pointer" htmlFor="Cadeiras">
                   Cadeiras
                 </label>
@@ -170,7 +180,7 @@ const Categories = ({ bikes }) => {
                   className="radio-item" // Adicione uma classe para estilizar
                   style={{ display: "none" }}
                 />
-                <MdTableRestaurant /> 
+                <MdTableRestaurant />
                 <label className="cursor-pointer" htmlFor="Mesas">
                   Mesas de Centro
                 </label>
@@ -220,18 +230,25 @@ const Categories = ({ bikes }) => {
               </div>
 
               <div className="flex items-center space-x-2">
-                <RadioGroupItem
-                  value="Plantas"
-                  id="Plantas"
-                  onClick={() => handleCategoryChange("Plantas")}
-                  className="radio-item" // Adicione uma classe para estilizar
-                  style={{ display: "none" }}
-                />
-                <RiPlantFill />
-                <label className="cursor-pointer" htmlFor="Plantas">
-                  Plantas
-                </label>
-              </div>
+  <RadioGroupItem
+    value="Plantas"
+    id="Plantas"
+    onClick={() => handleCategoryChange("Plantas")}
+    className="radio-item"
+    style={{ display: "none" }}
+  />
+  <RiPlantFill />
+  <label
+    className="cursor-pointer"
+    htmlFor="Plantas"
+    style={{ cursor: "pointer", textDecoration: "none" }}
+    onMouseOver={(e) => e.target.style.textDecoration = "underline"}
+    onMouseOut={(e) => e.target.style.textDecoration = "none"}
+  >
+    Plantas
+  </label>
+</div>
+
 
               <div className="flex items-center space-x-2">
                 <RadioGroupItem
@@ -262,7 +279,10 @@ const Categories = ({ bikes }) => {
               </div>
             </RadioGroup>
           </aside>
-          <div className="w-full xl:w-[1050px] ml-auto flex flex-wrap justify-start gap-4" style={{ marginTop: '-648px' }}>
+          <div
+            className="w-full xl:w-[1050px] ml-auto flex flex-wrap justify-start gap-4"
+            style={{ marginTop: "-648px" }}
+          >
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-[30px]">
               {filteredBikes.map((bike) => {
                 return <Item bike={bike} key={bike.price_id} />;
