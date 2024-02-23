@@ -29,11 +29,11 @@ const Popular = async () => {
     return (
         <section className='py-2 mb-10 mt-8'>
             <div className='container mx-auto'>
-                <h2 className='text-center'>Mais populares</h2>
+                {/* <h2 className='text-center'>Mais populares</h2>
                 <p className='text-center mb-2 sm:mb-4 md:mb-6 lg:mb-8'>
                     Nossos produtos mais escolhidos
                 </p>
-                <ItemsCarousel bikes={bikes} />
+                <ItemsCarousel bikes={bikes} /> */}
                 <Link href='/produtos'>
                     {/* <button className='btn btn-accent mx-auto'>
                         Veja todos nossos produtos

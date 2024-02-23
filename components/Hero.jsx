@@ -34,11 +34,11 @@ const Hero = () => {
           </div>
         </div>
         {/* Ícone de seta para baixo */}
-        <div className="flex justify-center mt-20">
+        {/* <div className="flex justify-center mt-20">
           <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-gray-800 animate-bounce" viewBox="0 0 20 20" fill="currentColor">
             <path fillRule="evenodd" d="M10 2a1 1 0 0 1 1 1v11.586l2.293-2.293a1 1 0 1 1 1.414 1.414l-4 4a1 1 0 0 1-1.414 0l-4-4a1 1 0 1 1 1.414-1.414L9 14.586V3a1 1 0 0 1 1-1z" clipRule="evenodd" />
           </svg>
-        </div>
+        </div> */}
       </div>
     </section>
   );
