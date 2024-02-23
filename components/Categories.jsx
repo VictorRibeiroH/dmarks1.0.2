@@ -228,6 +228,7 @@ const Categories = ({ bikes }) => {
                   Puffs
                 </label>
               </div>
+              
 
               <div className="flex items-center space-x-2">
   <RadioGroupItem
@@ -241,12 +242,24 @@ const Categories = ({ bikes }) => {
   <label
     className="cursor-pointer"
     htmlFor="Plantas"
-    style={{ cursor: "pointer", textDecoration: "none" }}
-    onMouseOver={(e) => e.target.style.textDecoration = "underline"}
-    onMouseOut={(e) => e.target.style.textDecoration = "none"}
+    style={{ 
+      cursor: "pointer", 
+      textDecoration: "none",
+    }}
   >
-    Plantas
+    <span
+      style={{
+        transition: "color 0.3s ease-in-out"
+      }}
+    >
+      Plantas
+    </span>
   </label>
+  <style jsx>{`
+    label:hover span {
+      color: #1885ad;
+    }
+  `}</style>
 </div>
 
 
