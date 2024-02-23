@@ -35,9 +35,9 @@ const Popular = async () => {
                 </p>
                 <ItemsCarousel bikes={bikes} />
                 <Link href='/produtos'>
-                    <button className='btn btn-accent mx-auto'>
+                    {/* <button className='btn btn-accent mx-auto'>
                         Veja todos nossos produtos
-                    </button>
+                    </button> */}
                 </Link>
             </div>
         </section>
