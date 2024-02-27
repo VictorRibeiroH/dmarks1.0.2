@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import Infos from './Infos';
 
 // Dados dos eventos
 const events = [
@@ -140,6 +141,11 @@ const Popular = () => {
             font-size: 20px; // Ajuste o tamanho da fonte conforme necessário
           }
       `}</style>
+
+
+      <div>
+          <Infos />
+      </div>
     </section>
   );
 };

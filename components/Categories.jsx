@@ -338,7 +338,7 @@ const Categories = ({ bikes }) => {
                   className="radio-item"
                   style={{ display: "none" }}
                 />
-                <RiPlantFill />
+                <SiAirtable  />
                 <label
                   className="cursor-pointer"
                   htmlFor="Atendimento"
@@ -370,7 +370,7 @@ const Categories = ({ bikes }) => {
                   className="radio-item"
                   style={{ display: "none" }}
                 />
-                <RiPlantFill />
+                <PiArmchairFill  />
                 <label
                   className="cursor-pointer"
                   htmlFor="Poltronas"
@@ -402,7 +402,7 @@ const Categories = ({ bikes }) => {
                   className="radio-item"
                   style={{ display: "none" }}
                 />
-                <RiPlantFill />
+                <GiCube  />
                 <label
                   className="cursor-pointer"
                   htmlFor="Puffs"
@@ -467,7 +467,7 @@ const Categories = ({ bikes }) => {
                   className="radio-item"
                   style={{ display: "none" }}
                 />
-                <RiPlantFill />
+                <LuRefrigerator  />
                 <label
                   className="cursor-pointer"
                   htmlFor="Refrigeração"
@@ -500,7 +500,7 @@ const Categories = ({ bikes }) => {
                   className="radio-item"
                   style={{ display: "none" }}
                 />
-                <RiPlantFill />
+                <FaCouch  />
                 <label
                   className="cursor-pointer"
                   htmlFor="Sofás"
