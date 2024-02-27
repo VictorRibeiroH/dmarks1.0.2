@@ -1,5 +1,6 @@
 "use client";
-import React, { useState, useEffect } from 'react';
+
+import React from 'react';
 
 const Slider = () => {
   const slides = [
@@ -8,27 +9,17 @@ const Slider = () => {
     { title: 'Valores', description: 'Qualidade, agilidade e confiança.' }
   ];
 
-  const [currentSlide, setCurrentSlide] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
-    }, 10000); // Troca de slide a cada 10 segundos
-
-    return () => clearInterval(interval);
-  }, [currentSlide, slides.length]);
-
-  const nextSlide = () => {
-    setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
-  };
-
   return (
-    <div style={{ textAlign: 'center' }} className='mt-12'>
-      <h1 style={{ fontSize: '2em', fontWeight: 'bold' }}>{slides[currentSlide].title}</h1>
-      <p style={{ fontSize: '1.2em', maxWidth: '600px', margin: '9 auto' }}>{slides[currentSlide].description}</p>
-      <button className='btn btn-accent' style={{ display: 'block', margin: '20px auto' }} onClick={nextSlide}>&gt;</button>
+    <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '50px', marginLeft: '60px' }}>
+      {slides.map((slide, index) => (
+        <div key={index} style={{ flex: 1, textAlign: 'center', padding: '0 20px' }}>
+          <h1 style={{ fontSize: '2em', fontWeight: 'bold', margin: '0' }}>{slide.title}</h1>
+          <p style={{ fontSize: '1.4em', maxWidth: '600px', margin: '0 auto' }}>{slide.description}</p>
+        </div>
+      ))}
     </div>
   );
 };
 
 export default Slider;
+

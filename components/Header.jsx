@@ -14,7 +14,7 @@ const Header = () => {
       <div className="container mx-auto flex justify-between items-center">
         <Link href="/" className="hover:text-current">
           <div className="flex items-center">
-            <img src="/dmarksLogo.png" alt="DMarks Logo"  style={{ height: '66px' }} className="h-8 mr-2" />
+            <img src="/dmarksLogo.png" alt="DMarks Logo"  style={{ height: '52px' }} className="h-8 mr-2" />
           
           </div>
         </Link>

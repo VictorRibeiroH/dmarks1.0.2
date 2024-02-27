@@ -1,16 +1,32 @@
 "use client";
 
-import React, { useState } from 'react';
-import { Carousel } from 'react-responsive-carousel';
-import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import Infos from './Infos';
+import React, { useState } from "react";
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import Infos from "./Infos";
 
 // Dados dos eventos
 const events = [
-  { id: 1, images: ['/eventos/evento3.jpeg', '/eventos/evento2.jpeg'], name: 'Nome do Evento 1' },
-  { id: 2, images: ['/eventos/evento2.jpeg', '/eventos/evento3.jpeg'], name: 'Nome do Evento 2' },
-  { id: 3, images: ['/eventos/evento2.jpeg', '/eventos/evento3.jpeg'], name: 'Nome do Evento 3' },
-  { id: 4, images: ['/eventos/evento2.jpeg', '/eventos/evento3.jpeg'], name: 'Nome do Evento 4' },
+  {
+    id: 1,
+    images: ["/eventos/evento3.jpeg", "/eventos/evento2.jpeg"],
+    name: "Nome do Evento 1",
+  },
+  {
+    id: 2,
+    images: ["/eventos/evento2.jpeg", "/eventos/evento3.jpeg"],
+    name: "Nome do Evento 2",
+  },
+  {
+    id: 3,
+    images: ["/eventos/evento2.jpeg", "/eventos/evento3.jpeg"],
+    name: "Nome do Evento 3",
+  },
+  {
+    id: 4,
+    images: ["/eventos/evento2.jpeg", "/eventos/evento3.jpeg"],
+    name: "Nome do Evento 4",
+  },
 
   // Adicione mais objetos de evento conforme necessário
 ];
@@ -30,26 +46,37 @@ const Popular = () => {
   };
 
   return (
-    <section className='py-2 mb-10 mt-8'>
-      <div className='container mx-auto'>
+    <section className="py-2 mb-10 mt-8">
+
+      <div className="container mx-auto">
         <h2 className="text-center">PORTFOLIO</h2>
         <p className="text-center mb-4">Confira alguns dos nossos trabalhos</p>
-        <div className='slider-container'>
+        <div className="slider-container">
           {events.map((event) => (
-            <div key={event.id} className='image-container' onClick={() => openModal(event)}>
+            <div
+              key={event.id}
+              className="image-container"
+              onClick={() => openModal(event)}
+            >
               <img src={event.images[0]} alt={event.name} />
-              <div className='image-overlay'>
-                <h3 className='event-name'>{event.name}</h3>
+              <div className="image-overlay">
+                <h3 className="event-name">{event.name}</h3>
               </div>
             </div>
           ))}
         </div>
         {/* Modal para exibir todas as imagens */}
         {modalOpen && currentEvent && (
-          <div className='modal' onClick={closeModal}>
-            <div className='modal-content' onClick={(e) => e.stopPropagation()}>
-              <button className='close-btn' onClick={closeModal}>Fechar</button>
-              <Carousel showArrows={true} infiniteLoop={true} showThumbs={false}>
+          <div className="modal" onClick={closeModal}>
+            <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+              <button className="close-btn" onClick={closeModal}>
+                Fechar
+              </button>
+              <Carousel
+                showArrows={true}
+                infiniteLoop={true}
+                showThumbs={false}
+              >
                 {currentEvent.images.map((image, index) => (
                   <div key={index}>
                     <img src={image} alt={currentEvent.name} />
@@ -138,10 +165,9 @@ const Popular = () => {
           color: #fff; /* Mudar a cor do texto no hover */
         }
         .event-name {
-            font-size: 20px; // Ajuste o tamanho da fonte conforme necessário
-          }
+          font-size: 20px; // Ajuste o tamanho da fonte conforme necessário
+        }
       `}</style>
-
 
       <div>
           <Infos />
