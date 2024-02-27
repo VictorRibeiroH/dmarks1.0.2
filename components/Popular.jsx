@@ -46,11 +46,11 @@ const Popular = () => {
   };
 
   return (
-    <section className="py-2 mb-10 mt-8">
+    <section className="py-2 mb-12 mt-8">
 
       <div className="container mx-auto">
         <h2 className="text-center">PORTFOLIO</h2>
-        <p className="text-center mb-4">Confira alguns dos nossos trabalhos</p>
+        <p className="text-center mb-4" style={{ fontSize: '1.4em' }}>Confira alguns dos nossos trabalhos</p>
         <div className="slider-container">
           {events.map((event) => (
             <div
