@@ -8,10 +8,10 @@ import { CgEye, CgShoppingBag } from "react-icons/cg";
 import AddToCartBtn from "./AddToCartBtn";
 
 const Item = ({ bike }) => {
-  const popularBikeCat = bike.categories.find(
+  const popularBikeCat = (bike.categories || []).find(
     (bike) => bike.name === "Popular"
   );
-
+  
   const [showModal, setShowModal] = useState(false);
 
   const toggleModal = () => {
@@ -61,8 +61,8 @@ const Item = ({ bike }) => {
         </div>
       </div>
       <h5 className="text-gray-400 font-semibold mb-2">
-        {bike.categories[0].name}
-      </h5>
+  {bike.categories && bike.categories.length > 0 && bike.categories[0].name}
+</h5>
       <h4 className="mb-1">{bike.name}</h4>
       {showModal && (
         <div
