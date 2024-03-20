@@ -26,14 +26,12 @@ const Categories = ({ bikes }) => {
   useEffect(() => {
     const filtered = bikes.filter((bike) => {
       const categoryMatch =
-        category === "all"
+        category === "all" || !bike.categories // Adicionando verificação de bike.categories
           ? true
           : bike.categories.some((categ) => categ.name === category);
       const searchMatch =
         (bike.name ?? "").toLowerCase().includes(searchTerm.toLowerCase()) ||
-        (bike.description ?? "")
-          .toLowerCase()
-          .includes(searchTerm.toLowerCase());
+        (bike.description ?? "").toLowerCase().includes(searchTerm.toLowerCase());
       return categoryMatch && (searchTerm === "" || searchMatch);
     });
     setFilteredBikes(filtered);
