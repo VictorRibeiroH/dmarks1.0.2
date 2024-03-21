@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState } from "react";
@@ -21,7 +22,7 @@ const Item = ({ bike }) => {
   return (
     <div className="group">
       <div className="border h-[328px] mb-5 p-4 overflow-hidden relative">
-        <div className="bg-primary/5 w-full h-full group-hover:bg-primary/10 transition-all duration-300 flex justify-center items-center">
+        <div className=" w-full h-full group-hover:bg-primary/10 transition-all duration-300 flex justify-center items-center">
           {/* Badges */}
           {popularBikeCat && (
             <div className="absolute top-8 left-8 bg-accent text-white px-3 text-sm uppercase font-medium">
