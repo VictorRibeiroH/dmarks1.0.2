@@ -1,0 +1,44 @@
+name: "Deployment"
+
+on:
+  push:
+    branches:
+      - main
+  
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Build
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Git Push SFTP
+        uses: addnab/docker-run-action@v3
+        with:
+          image: rafaelarcanjo/git-sftp:alpine-3.15-7.81.0_5
+          options: -v ${{ github.workspace }}:/git -w /git
+          run: |
+              echo '${{ secrets.PRIVATE_KEY }}' > /private.key
+              chmod 400 /private.key
+
+              git config --global --add safe.directory $(pwd)
+              git config git-ftp.url sftp://${{ secrets.HOSTNAME }}/opt/dmarks1.0.2/.
+              git config git-ftp.user ${{ secrets.USERNAME }}
+              git config git-ftp.privatekey "/private.key"
+              git config git-ftp.syncroot .
+              git ftp push --key "/private.key" --insecure --auto-init
+
+      - name: Apply Docker Composite
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOSTNAME }}
+          username: ${{ secrets.USERNAME }}
+          passphrase: ${{ secrets.PASSPHRASE }}
+          key: ${{ secrets.PRIVATE_KEY }}
+          script: |
+            cd /opt/dmarks1.0.2/
+            docker compose up -d --build
