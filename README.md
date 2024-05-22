@@ -9,7 +9,7 @@ npm run dev!.
 # or
 yarn dev
 # or
-pnpm dev1
+pnpm dev11
 # or
 bun dev
 ```
