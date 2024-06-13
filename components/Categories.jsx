@@ -31,7 +31,9 @@ const Categories = ({ bikes }) => {
           : bike.categories.some((categ) => categ.name === category);
       const searchMatch =
         (bike.name ?? "").toLowerCase().includes(searchTerm.toLowerCase()) ||
-        (bike.description ?? "").toLowerCase().includes(searchTerm.toLowerCase());
+        (bike.description ?? "")
+          .toLowerCase()
+          .includes(searchTerm.toLowerCase());
       return categoryMatch && (searchTerm === "" || searchMatch);
     });
     setFilteredBikes(filtered);
@@ -66,8 +68,21 @@ const Categories = ({ bikes }) => {
                   onClick={() => handleCategoryChange("all")}
                   style={{ display: "none" }} // Estilize o RadioGroupItem aqui
                 />
-                <label className="cursor-pointer" htmlFor="all">
-                  Todas
+                <label
+                  className="cursor-pointer"
+                  htmlFor="all"
+                  style={{
+                    cursor: "pointer",
+                    textDecoration: "none",
+                  }}
+                >
+                  <span
+                    style={{
+                      transition: "color 0.3s ease-in-out",
+                    }}
+                  >
+                    Todos os Itens
+                  </span>
                 </label>
               </div>
               {/* começa aqui categorias */}
@@ -112,7 +127,7 @@ const Categories = ({ bikes }) => {
                   className="radio-item"
                   style={{ display: "none" }}
                 />
-                <FaBuffer  />
+                <FaBuffer />
                 <label
                   className="cursor-pointer"
                   htmlFor="Aparadores"
@@ -144,7 +159,7 @@ const Categories = ({ bikes }) => {
                   className="radio-item"
                   style={{ display: "none" }}
                 />
-                <MdCountertops  />
+                <MdCountertops />
                 <label
                   className="cursor-pointer"
                   htmlFor="Balcões"
@@ -176,7 +191,7 @@ const Categories = ({ bikes }) => {
                   className="radio-item"
                   style={{ display: "none" }}
                 />
-                <MdChairAlt  />
+                <MdChairAlt />
                 <label
                   className="cursor-pointer"
                   htmlFor="Banquetas"
@@ -208,7 +223,7 @@ const Categories = ({ bikes }) => {
                   className="radio-item"
                   style={{ display: "none" }}
                 />
-                <FaChair  />
+                <FaChair />
                 <label
                   className="cursor-pointer"
                   htmlFor="Cadeiras"
@@ -240,7 +255,7 @@ const Categories = ({ bikes }) => {
                   className="radio-item"
                   style={{ display: "none" }}
                 />
-                <FaTrashAlt  />
+                <FaTrashAlt />
                 <label
                   className="cursor-pointer"
                   htmlFor="Lixeiras"
@@ -272,7 +287,7 @@ const Categories = ({ bikes }) => {
                   className="radio-item"
                   style={{ display: "none" }}
                 />
-                <MdTableBar  />
+                <MdTableBar />
                 <label
                   className="cursor-pointer"
                   htmlFor="Bistrôs"
@@ -304,7 +319,7 @@ const Categories = ({ bikes }) => {
                   className="radio-item"
                   style={{ display: "none" }}
                 />
-                <MdTableRestaurant  />
+                <MdTableRestaurant />
                 <label
                   className="cursor-pointer"
                   htmlFor="Mesas"
@@ -336,7 +351,7 @@ const Categories = ({ bikes }) => {
                   className="radio-item"
                   style={{ display: "none" }}
                 />
-                <SiAirtable  />
+                <SiAirtable />
                 <label
                   className="cursor-pointer"
                   htmlFor="Atendimento"
@@ -368,7 +383,7 @@ const Categories = ({ bikes }) => {
                   className="radio-item"
                   style={{ display: "none" }}
                 />
-                <PiArmchairFill  />
+                <PiArmchairFill />
                 <label
                   className="cursor-pointer"
                   htmlFor="Poltronas"
@@ -400,7 +415,7 @@ const Categories = ({ bikes }) => {
                   className="radio-item"
                   style={{ display: "none" }}
                 />
-                <GiCube  />
+                <GiCube />
                 <label
                   className="cursor-pointer"
                   htmlFor="Puffs"
@@ -456,7 +471,6 @@ const Categories = ({ bikes }) => {
                 `}</style>
               </div>
 
-              
               <div className="flex items-center space-x-2">
                 <RadioGroupItem
                   value="Refrigeração"
@@ -465,7 +479,7 @@ const Categories = ({ bikes }) => {
                   className="radio-item"
                   style={{ display: "none" }}
                 />
-                <LuRefrigerator  />
+                <LuRefrigerator />
                 <label
                   className="cursor-pointer"
                   htmlFor="Refrigeração"
@@ -488,8 +502,7 @@ const Categories = ({ bikes }) => {
                   }
                 `}</style>
               </div>
-             
-             
+
               <div className="flex items-center space-x-2">
                 <RadioGroupItem
                   value="Sofás"
@@ -498,7 +511,7 @@ const Categories = ({ bikes }) => {
                   className="radio-item"
                   style={{ display: "none" }}
                 />
-                <FaCouch  />
+                <FaCouch />
                 <label
                   className="cursor-pointer"
                   htmlFor="Sofás"
