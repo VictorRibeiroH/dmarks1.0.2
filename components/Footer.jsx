@@ -1,13 +1,13 @@
-import React from "react";
-import Link from "next/link";
+import React from "react"
+import Link from "next/link"
 import {
   RiMailLine,
   RiMapPinLine,
   RiPhoneLine,
   RiWhatsappLine,
-} from "react-icons/ri";
-import { FaClock } from "react-icons/fa";
-import { Input } from "./ui/input";
+} from "react-icons/ri"
+import { FaClock } from "react-icons/fa"
+import { Input } from "./ui/input"
 
 const Footer = () => {
   return (
@@ -40,7 +40,7 @@ const Footer = () => {
               <h2 className="capitalize leading-tight mb-2 text-3xl">
                 Onde Estamos
               </h2>
-              <div className="flex flex-col gap-2 text-white/60 ml-auto">
+              <div className="flex items-center lg:items-start lg:max-w-[370px] flex-col gap-2 text-white/60 ml-auto">
                 <div className="flex items-start">
                   <RiMapPinLine className="mr-2 mt-1" />
                   Av. Rancho Alegre, 207 - Barracão B <br />
@@ -87,7 +87,7 @@ const Footer = () => {
         Copyright &copy; 2024 Dmarks. All rights reserved
       </div>
     </footer>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer
