@@ -1,25 +1,37 @@
-"use client";
+"use client"
 
-import Link from "next/link";
-import Nav from "./Nav";
-import CartSidebar from "./CartSidebar";
-import { CgShoppingBag } from "react-icons/cg";
-import { useShoppingCart } from "use-shopping-cart";
+import Link from "next/link"
+import Nav from "./Nav"
+import CartSidebar from "./CartSidebar"
+import { CgShoppingBag } from "react-icons/cg"
+import { useShoppingCart } from "use-shopping-cart"
+import { useState } from "react"
 
 const Header = () => {
-  const { cartCount, handleCartClick } = useShoppingCart();
+  const { cartCount, handleCartClick } = useShoppingCart()
+  const [isClick, setIsClick] = useState(false)
+  const toggleNavbar = () => {
+    setIsClick(!isClick)
+  }
 
   return (
     <header className="bg-white shadow-lg sticky top-0 py-8 z-40">
       <div className="container mx-auto flex justify-between items-center">
         <Link href="/" className="hover:text-current">
           <div className="flex items-center">
-            <img src="/dmarksLogo.png" alt="DMarks Logo"  style={{ height: '52px' }} className="h-8 mr-2" />
-          
+            <img
+              src="/dmarksLogo.png"
+              alt="DMarks Logo"
+              style={{ height: "52px" }}
+              className="h-8 mr-2"
+            />
           </div>
         </Link>
         <div className="flex items-center gap-[26px]">
-          <Nav containerStyles="flex gap-[36px]"/>
+          <Nav containerStyles="flex gap-[36px] hidden sm:flex" />
+          <button className="sm:hidden transition-all" onClick={toggleNavbar}>
+            <img src="/menu-hamburger.svg" alt="" />
+          </button>
           <div
             onClick={() => handleCartClick()}
             className="relative cursor-pointer"
@@ -32,8 +44,13 @@ const Header = () => {
           <CartSidebar />
         </div>
       </div>
+      {isClick && (
+        <div className="navMobile">
+          <Nav containerStyles="flex p-8 pb-0 text-center flex-col gap-[36px]  sm:flex" />
+        </div>
+      )}
     </header>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header
