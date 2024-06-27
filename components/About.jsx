@@ -1,32 +1,39 @@
-import React from "react";
+import React from "react"
 
 const About = () => {
   return (
     <div className="max-w-container mx-auto px-4 mt-10">
-      <div className="flex pb-10">
-        <div className="w-[60%] pb-10">
-          <h1 className="max-w-[600px] text-base text-lightText mb-2">
+      <div className="flex flex-col lg:flex-row pb-10">
+        <div className="w-[85%] lg:w-[60%] pb-10">
+          <h1 className="max-w-[700px] text-base text-lightText mb-2">
             <span className="text-primeColor font-semibold text-lg">
               <span className="text-black text-4xl">DMARKS LOCAÇÕES</span>
             </span>{" "}
             <span className="text-gray-500">
-              <br /><br />
-              Fundada em 2002, na cidade de Curitiba/PR, a D'marks Locações é uma empresa
-              especializada em locação de móveis para feiras e eventos em geral, sendo uma das
-              pioneiras no ramo.
-              <br /><br />
-              A empresa trabalha com profissionais treinados, visando sempre a qualidade dos produtos
-              e serviços prestados. Nossa principal missão é atender e satisfazer as necessidades de nossos clientes,
-              buscando melhorar constantemente o atendimento e o serviço prestado, com profissionais capacitados e materiais de primeira linha
-              <br /><br />
-              Para manter esse compromisso, a D'marks Locações, além de toda a estrutura
-              própria, possui um estoque amplo e variado e está sempre inovando com qualidade e bom
-              gosto, acompanhando as tendências do mercado, proporcionando aos seus clientes e 
-              parceiros a rentabilidade esperada e a certeza de bons negócios.
+              <br />
+              <br />
+              Fundada em 2002, na cidade de Curitiba/PR, a D'marks Locações é
+              uma empresa especializada em locação de móveis para feiras e
+              eventos em geral, sendo uma das pioneiras no ramo.
+              <br />
+              <br />
+              A empresa trabalha com profissionais treinados, visando sempre a
+              qualidade dos produtos e serviços prestados. Nossa principal
+              missão é atender e satisfazer as necessidades de nossos clientes,
+              buscando melhorar constantemente o atendimento e o serviço
+              prestado, com profissionais capacitados e materiais de primeira
+              linha
+              <br />
+              <br />
+              Para manter esse compromisso, a D'marks Locações, além de toda a
+              estrutura própria, possui um estoque amplo e variado e está sempre
+              inovando com qualidade e bom gosto, acompanhando as tendências do
+              mercado, proporcionando aos seus clientes e parceiros a
+              rentabilidade esperada e a certeza de bons negócios.
             </span>
           </h1>
         </div>
-        <div className="w-[40%]">
+        <div className="w-[100%] lg:w-[40%]">
           <iframe
             width="100%"
             height="400"
@@ -38,7 +45,7 @@ const About = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default About;
+export default About
