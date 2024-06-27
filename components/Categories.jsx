@@ -69,7 +69,7 @@ const Categories = ({ bikes }) => {
             Todos os itens
           </button>
           {isClick && (
-            <div className="sticky top-[11rem] bg-white z-40 px-10 mx-auto pb-4">
+            <div className="sticky top-[11rem] bg-white z-40 px-10 mx-auto pb-4 max-h-[400px] overflow-y-auto">
               <RadioGroup
                 defaultValue="all"
                 className="flex mt-4 flex-col gap-6 mb-12"
