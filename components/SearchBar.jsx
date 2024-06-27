@@ -1,26 +1,25 @@
-"use client";
+"use client"
 
-import React, { useState } from "react";
+import React, { useState } from "react"
 
 const SearchBar = ({ handleSearch }) => {
-  const [searchTerm, setSearchTerm] = useState("");
+  const [searchTerm, setSearchTerm] = useState("")
 
   const handleChange = (event) => {
-    const value = event.target.value;
-    setSearchTerm(value);
-    handleSearch(value); // Chamando a função handleSearch a cada mudança no valor do campo de entrada
-  };
+    const value = event.target.value
+    setSearchTerm(value)
+    handleSearch(value) // Chamando a função handleSearch a cada mudança no valor do campo de entrada
+  }
 
   const handleSubmit = (event) => {
-    event.preventDefault();
-    handleSearch(searchTerm);
-  };
+    event.preventDefault()
+    handleSearch(searchTerm)
+  }
 
   return (
-    <div className="flex justify-center hidden md:flex">
+    <div className="flex justify-center md:flex">
       <form
-        className="relative w-[100%] max-w-[900px] text-gray-600"
-        style={{marginLeft: '245px'}}
+        className="relative w-[100%] px-6 max-w-[900px] text-gray-600"
         onSubmit={handleSubmit}
       >
         <input
@@ -30,7 +29,7 @@ const SearchBar = ({ handleSearch }) => {
           onChange={handleChange}
         />
 
-        <button type="submit" className="absolute right-0 top-0 mt-7 mr-4">
+        <button type="submit" className="absolute right-0 top-0 mt-7 mr-[40px]">
           <svg
             className="h-4 w-4 fill-current"
             xmlns="http://www.w3.org/2000/svg"
@@ -45,7 +44,7 @@ const SearchBar = ({ handleSearch }) => {
         </button>
       </form>
     </div>
-  );
-};
+  )
+}
 
-export default SearchBar;
+export default SearchBar
