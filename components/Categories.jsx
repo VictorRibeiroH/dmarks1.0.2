@@ -22,6 +22,7 @@ const Categories = ({ bikes }) => {
   const [category, setCategory] = useState("all")
   const [filteredBikes, setFilteredBikes] = useState([])
   const [searchTerm, setSearchTerm] = useState("")
+  const [isClick, setIsClick] = useState(false)
 
   useEffect(() => {
     const filtered = bikes.filter((bike) => {
@@ -41,14 +42,19 @@ const Categories = ({ bikes }) => {
 
   const handleCategoryChange = (newCategory) => {
     setCategory(newCategory)
+    setIsClick(false) // Fecha a lista ao selecionar uma categoria
   }
 
   const handleSearch = (term) => {
     setSearchTerm(term)
   }
-  const [isClick, setIsClick] = useState(false)
+
   const toggleSelect = () => {
     setIsClick(!isClick)
+  }
+
+  const handleItemClick = () => {
+    setIsClick(false)
   }
 
   return (
@@ -63,18 +69,17 @@ const Categories = ({ bikes }) => {
             Todos os itens
           </button>
           {isClick && (
-            <div className="sticky top-[11rem] bg-white z-40 px-10 mx-auto">
+            <div className="sticky top-[11rem] bg-white z-40 px-10 mx-auto pb-4">
               <RadioGroup
                 defaultValue="all"
                 className="flex mt-4 flex-col gap-6 mb-12"
               >
-                {/* Códigos das categorias omitidos para brevidade */}
-                {/* <div className="flex items-center space-x-2">
+                <div className="flex items-center space-x-2">
                   <RadioGroupItem
                     value="all"
                     id="all"
                     onClick={() => handleCategoryChange("all")}
-                    style={{ display: "none" }} // Estilize o RadioGroupItem aqui
+                    style={{ display: "none" }}
                   />
                   <label
                     className="cursor-pointer"
@@ -92,15 +97,12 @@ const Categories = ({ bikes }) => {
                       Todos os Itens
                     </span>
                   </label>
-                </div> */}
-                {/* começa aqui categorias */}
-
+                </div>
                 <div className="flex items-center space-x-2">
                   <RadioGroupItem
                     value="Acessórios"
                     id="Acessórios"
                     onClick={() => handleCategoryChange("Acessórios")}
-                    className="radio-item"
                     style={{ display: "none" }}
                   />
                   <SiAccenture />
@@ -132,7 +134,6 @@ const Categories = ({ bikes }) => {
                     value="Aparadores"
                     id="Aparadores"
                     onClick={() => handleCategoryChange("Aparadores")}
-                    className="radio-item"
                     style={{ display: "none" }}
                   />
                   <FaBuffer />
@@ -164,7 +165,6 @@ const Categories = ({ bikes }) => {
                     value="Balcões"
                     id="Balcões"
                     onClick={() => handleCategoryChange("Balcões")}
-                    className="radio-item"
                     style={{ display: "none" }}
                   />
                   <MdCountertops />
@@ -196,7 +196,6 @@ const Categories = ({ bikes }) => {
                     value="Banquetas"
                     id="Banquetas"
                     onClick={() => handleCategoryChange("Banquetas")}
-                    className="radio-item"
                     style={{ display: "none" }}
                   />
                   <MdChairAlt />
@@ -228,7 +227,6 @@ const Categories = ({ bikes }) => {
                     value="Cadeiras"
                     id="Cadeiras"
                     onClick={() => handleCategoryChange("Cadeiras")}
-                    className="radio-item"
                     style={{ display: "none" }}
                   />
                   <FaChair />
@@ -260,7 +258,6 @@ const Categories = ({ bikes }) => {
                     value="Lixeiras"
                     id="Lixeiras"
                     onClick={() => handleCategoryChange("Lixeiras")}
-                    className="radio-item"
                     style={{ display: "none" }}
                   />
                   <FaTrashAlt />
@@ -292,7 +289,6 @@ const Categories = ({ bikes }) => {
                     value="Bistrôs"
                     id="Bistrôs"
                     onClick={() => handleCategoryChange("Bistrôs")}
-                    className="radio-item"
                     style={{ display: "none" }}
                   />
                   <MdTableBar />
@@ -324,7 +320,6 @@ const Categories = ({ bikes }) => {
                     value="Mesas"
                     id="Mesas"
                     onClick={() => handleCategoryChange("Mesas")}
-                    className="radio-item"
                     style={{ display: "none" }}
                   />
                   <MdTableRestaurant />
@@ -356,7 +351,6 @@ const Categories = ({ bikes }) => {
                     value="Atendimento"
                     id="Atendimento"
                     onClick={() => handleCategoryChange("Atendimento")}
-                    className="radio-item"
                     style={{ display: "none" }}
                   />
                   <SiAirtable />
@@ -388,7 +382,6 @@ const Categories = ({ bikes }) => {
                     value="Poltronas"
                     id="Poltronas"
                     onClick={() => handleCategoryChange("Poltronas")}
-                    className="radio-item"
                     style={{ display: "none" }}
                   />
                   <PiArmchairFill />
@@ -420,7 +413,6 @@ const Categories = ({ bikes }) => {
                     value="Puffs"
                     id="Puffs"
                     onClick={() => handleCategoryChange("Puffs")}
-                    className="radio-item"
                     style={{ display: "none" }}
                   />
                   <GiCube />
@@ -452,7 +444,6 @@ const Categories = ({ bikes }) => {
                     value="Plantas"
                     id="Plantas"
                     onClick={() => handleCategoryChange("Plantas")}
-                    className="radio-item"
                     style={{ display: "none" }}
                   />
                   <RiPlantFill />
@@ -484,7 +475,6 @@ const Categories = ({ bikes }) => {
                     value="Refrigeração"
                     id="Refrigeração"
                     onClick={() => handleCategoryChange("Refrigeração")}
-                    className="radio-item"
                     style={{ display: "none" }}
                   />
                   <LuRefrigerator />
@@ -516,7 +506,6 @@ const Categories = ({ bikes }) => {
                     value="Sofás"
                     id="Sofás"
                     onClick={() => handleCategoryChange("Sofás")}
-                    className="radio-item"
                     style={{ display: "none" }}
                   />
                   <FaCouch />
@@ -551,13 +540,12 @@ const Categories = ({ bikes }) => {
                 defaultValue="all"
                 className="flex flex-col gap-6 mb-12"
               >
-                {/* Códigos das categorias omitidos para brevidade */}
                 <div className="flex items-center space-x-2">
                   <RadioGroupItem
                     value="all"
                     id="all"
                     onClick={() => handleCategoryChange("all")}
-                    style={{ display: "none" }} // Estilize o RadioGroupItem aqui
+                    style={{ display: "none" }}
                   />
                   <label
                     className="cursor-pointer"
@@ -576,14 +564,12 @@ const Categories = ({ bikes }) => {
                     </span>
                   </label>
                 </div>
-                {/* começa aqui categorias */}
 
                 <div className="flex items-center space-x-2">
                   <RadioGroupItem
                     value="Acessórios"
                     id="Acessórios"
                     onClick={() => handleCategoryChange("Acessórios")}
-                    className="radio-item"
                     style={{ display: "none" }}
                   />
                   <SiAccenture />
@@ -615,7 +601,6 @@ const Categories = ({ bikes }) => {
                     value="Aparadores"
                     id="Aparadores"
                     onClick={() => handleCategoryChange("Aparadores")}
-                    className="radio-item"
                     style={{ display: "none" }}
                   />
                   <FaBuffer />
@@ -647,7 +632,6 @@ const Categories = ({ bikes }) => {
                     value="Balcões"
                     id="Balcões"
                     onClick={() => handleCategoryChange("Balcões")}
-                    className="radio-item"
                     style={{ display: "none" }}
                   />
                   <MdCountertops />
@@ -679,7 +663,6 @@ const Categories = ({ bikes }) => {
                     value="Banquetas"
                     id="Banquetas"
                     onClick={() => handleCategoryChange("Banquetas")}
-                    className="radio-item"
                     style={{ display: "none" }}
                   />
                   <MdChairAlt />
@@ -711,7 +694,6 @@ const Categories = ({ bikes }) => {
                     value="Cadeiras"
                     id="Cadeiras"
                     onClick={() => handleCategoryChange("Cadeiras")}
-                    className="radio-item"
                     style={{ display: "none" }}
                   />
                   <FaChair />
@@ -743,7 +725,6 @@ const Categories = ({ bikes }) => {
                     value="Lixeiras"
                     id="Lixeiras"
                     onClick={() => handleCategoryChange("Lixeiras")}
-                    className="radio-item"
                     style={{ display: "none" }}
                   />
                   <FaTrashAlt />
@@ -775,7 +756,6 @@ const Categories = ({ bikes }) => {
                     value="Bistrôs"
                     id="Bistrôs"
                     onClick={() => handleCategoryChange("Bistrôs")}
-                    className="radio-item"
                     style={{ display: "none" }}
                   />
                   <MdTableBar />
@@ -807,7 +787,6 @@ const Categories = ({ bikes }) => {
                     value="Mesas"
                     id="Mesas"
                     onClick={() => handleCategoryChange("Mesas")}
-                    className="radio-item"
                     style={{ display: "none" }}
                   />
                   <MdTableRestaurant />
@@ -839,7 +818,6 @@ const Categories = ({ bikes }) => {
                     value="Atendimento"
                     id="Atendimento"
                     onClick={() => handleCategoryChange("Atendimento")}
-                    className="radio-item"
                     style={{ display: "none" }}
                   />
                   <SiAirtable />
@@ -871,7 +849,6 @@ const Categories = ({ bikes }) => {
                     value="Poltronas"
                     id="Poltronas"
                     onClick={() => handleCategoryChange("Poltronas")}
-                    className="radio-item"
                     style={{ display: "none" }}
                   />
                   <PiArmchairFill />
@@ -903,7 +880,6 @@ const Categories = ({ bikes }) => {
                     value="Puffs"
                     id="Puffs"
                     onClick={() => handleCategoryChange("Puffs")}
-                    className="radio-item"
                     style={{ display: "none" }}
                   />
                   <GiCube />
@@ -935,7 +911,6 @@ const Categories = ({ bikes }) => {
                     value="Plantas"
                     id="Plantas"
                     onClick={() => handleCategoryChange("Plantas")}
-                    className="radio-item"
                     style={{ display: "none" }}
                   />
                   <RiPlantFill />
@@ -967,7 +942,6 @@ const Categories = ({ bikes }) => {
                     value="Refrigeração"
                     id="Refrigeração"
                     onClick={() => handleCategoryChange("Refrigeração")}
-                    className="radio-item"
                     style={{ display: "none" }}
                   />
                   <LuRefrigerator />
@@ -999,7 +973,6 @@ const Categories = ({ bikes }) => {
                     value="Sofás"
                     id="Sofás"
                     onClick={() => handleCategoryChange("Sofás")}
-                    className="radio-item"
                     style={{ display: "none" }}
                   />
                   <FaCouch />
@@ -1030,7 +1003,11 @@ const Categories = ({ bikes }) => {
             <div className="max-w-[75%] mt-10 mx-auto">
               <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-[30px]">
                 {filteredBikes.map((bike) => {
-                  return <Item bike={bike} key={bike.price_id} />
+                  return (
+                    <div onClick={handleItemClick} key={bike.price_id}>
+                      <Item bike={bike} />
+                    </div>
+                  )
                 })}
               </div>
             </div>

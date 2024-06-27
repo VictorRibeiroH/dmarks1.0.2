@@ -14,10 +14,18 @@ const Header = () => {
     setIsClick(!isClick)
   }
 
+  const handleNavItemClick = () => {
+    setIsClick(false)
+  }
+
   return (
-    <header className="bg-white shadow-lg sticky top-0 py-8 z-40">
+    <header className="bg-white shadow-lg sticky top-0 py-8 z-50">
       <div className="container mx-auto flex justify-between items-center">
-        <Link href="/" className="hover:text-current">
+        <Link
+          href="/"
+          className="hover:text-current"
+          onClick={handleNavItemClick}
+        >
           <div className="flex items-center">
             <img
               src="/dmarksLogo.png"
@@ -30,7 +38,7 @@ const Header = () => {
         <div className="flex items-center gap-[26px]">
           <Nav containerStyles="flex gap-[36px] hidden sm:flex" />
           <button className="sm:hidden transition-all" onClick={toggleNavbar}>
-            <img src="/menu-hamburger.svg" alt="" />
+            <img src="/menu-hamburger.svg" alt="Menu" />
           </button>
           <div
             onClick={() => handleCartClick()}
@@ -46,7 +54,10 @@ const Header = () => {
       </div>
       {isClick && (
         <div className="navMobile">
-          <Nav containerStyles="flex p-8 pb-0 text-center flex-col gap-[36px]  sm:flex" />
+          <Nav
+            containerStyles="flex p-8 pb-0 text-center flex-col gap-[36px] sm:flex"
+            onNavItemClick={handleNavItemClick}
+          />
         </div>
       )}
     </header>
