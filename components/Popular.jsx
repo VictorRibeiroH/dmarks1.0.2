@@ -121,7 +121,7 @@ const Popular = () => {
                   <div key={index}>
                     <img
                       src={image}
-                      className="h-[410px] sm:max-h-[560px] object-cover"
+                      className="h-[410px] sm:h-[565px] object-cover"
                       alt={currentEvent.name}
                     />
                   </div>
