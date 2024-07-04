@@ -1,5 +1,6 @@
 import { client } from "@/app/lib/sanity"
 import Categories from "@/components/Categories"
+import Head from "next/head"
 
 // Data
 const getData = async () => {
@@ -24,9 +25,18 @@ const page = async () => {
   const sortedBikes = bikes.sort((a, b) => a.name.localeCompare(b.name))
 
   return (
-    <div>
-      <Categories bikes={sortedBikes} />
-    </div>
+    <>
+      <Head>
+        <title>Produtos | DMarks Locação de Móveis</title>
+        <meta
+          name="description"
+          content="Explore nossa ampla variedade de móveis disponíveis para locação para feiras e eventos. Qualidade e sofisticação para seu evento."
+        />
+      </Head>
+      <div>
+        <Categories bikes={sortedBikes} />
+      </div>
+    </>
   )
 }
 
