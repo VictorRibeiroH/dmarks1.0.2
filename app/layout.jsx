@@ -17,7 +17,7 @@ export const metadata = {
   description:
     "A D'Marks Locações, fundada em 2002 em Curitiba/PR, é especializada na locação de móveis para feiras e eventos. Com profissionais capacitados e materiais de alta qualidade, nossa missão é satisfazer as necessidades dos clientes, garantindo atendimento de excelência e inovação constante.",
   url: "https://dmarkslocacoes.com.br",
-  image: "/thumb.png",
+  image: "https://dmarkslocacoes.com.br/thumb.png",
 }
 
 export default function RootLayout({ children }) {
