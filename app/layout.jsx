@@ -24,15 +24,14 @@ export default function RootLayout({ children }) {
   return (
     <html lang="pt-br">
       <Head>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>{metadata.title}</title>
         <meta name="description" content={metadata.description} />
         {/* Open Graph meta tags */}
         <meta property="og:title" content={metadata.title} />
         <meta property="og:description" content={metadata.description} />
-        <meta
-          property="og:image"
-          content="https://dmarkslocacoes.com.br/thumb.png"
-        />
+        <meta property="og:image" content={metadata.image} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:url" content={metadata.url} />
@@ -41,9 +40,12 @@ export default function RootLayout({ children }) {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={metadata.title} />
         <meta name="twitter:description" content={metadata.description} />
-        <meta
-          name="twitter:image"
-          content="https://dmarkslocacoes.com.br/thumb.png"
+        <meta name="twitter:image" content={metadata.image} />
+        <link
+          rel="icon"
+          href="/favicon.ico"
+          type="image/x-icon"
+          sizes="16x16"
         />
       </Head>
       <body className={rajdhani.variable}>
