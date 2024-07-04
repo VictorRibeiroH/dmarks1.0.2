@@ -23,6 +23,8 @@ export const metadata = {
     images: "https://dmarkslocacoes.com.br/thumb.png",
   },
   keywords: ["Móveis", "Eventos", "Feira", "Mobília", "Locação"],
+  url: "https://dmarkslocacoes.com.br",
+  type: "website",
 }
 
 export default function RootLayout({ children }) {
