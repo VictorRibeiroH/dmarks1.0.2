@@ -105,7 +105,10 @@ const Popular = () => {
         {/* Modal para exibir todas as imagens */}
         {modalOpen && currentEvent && (
           <div className="modal" onClick={closeModal}>
-            <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <div
+              className="modal-content h-[50%] sm:h-[80%]"
+              onClick={(e) => e.stopPropagation()}
+            >
               <button className="close-btn" onClick={closeModal}>
                 Fechar
               </button>
@@ -118,7 +121,7 @@ const Popular = () => {
                   <div key={index}>
                     <img
                       src={image}
-                      className="max-h-[560px] object-cover"
+                      className="h-[410px] sm:max-h-[560px] object-cover"
                       alt={currentEvent.name}
                     />
                   </div>
@@ -179,7 +182,6 @@ const Popular = () => {
           background-color: #fff;
           padding: 20px;
           width: 80%; /* Largura do modal ajustada */
-          height: 80%; /* Altura do modal ajustada */
           max-width: 800px; /* Definir largura máxima do modal */
           max-height: 600px; /* Definir altura máxima do modal */
           border-radius: 8px;
