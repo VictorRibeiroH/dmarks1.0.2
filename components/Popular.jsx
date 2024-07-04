@@ -1,66 +1,103 @@
-"use client";
+"use client"
 
-import React, { useState } from "react";
-import { Carousel } from "react-responsive-carousel";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
-import Infos from "./Infos";
+import React, { useState } from "react"
+import { Carousel } from "react-responsive-carousel"
+import "react-responsive-carousel/lib/styles/carousel.min.css"
+import Infos from "./Infos"
 
 // Dados dos eventos
 const events = [
   {
     id: 1,
-    images: ["/eventos/evento3.jpeg", "/eventos/evento2.jpeg"],
-    name: "Nome do Evento 1",
+    images: [
+      "/eventos/expoapras/001.jpg",
+      "/eventos/expoapras/002.jpg",
+      "/eventos/expoapras/003.jpg",
+      "/eventos/expoapras/004.jpg",
+      "/eventos/expoapras/005.jpg",
+      "/eventos/expoapras/006.jpg",
+      "/eventos/expoapras/007.jpg",
+      "/eventos/expoapras/008.jpg",
+      "/eventos/expoapras/009.jpg",
+      "/eventos/expoapras/010.jpg",
+      "/eventos/expoapras/011.jpg",
+      "/eventos/expoapras/012.jpg",
+    ],
+    name: "Evento ExpoApras 2024",
   },
   {
     id: 2,
-    images: ["/eventos/evento2.jpeg", "/eventos/evento3.jpeg"],
-    name: "Nome do Evento 2",
+    images: [
+      "/eventos/smartcity/001.jpg",
+      "/eventos/smartcity/002.jpg",
+      "/eventos/smartcity/003.jpg",
+      "/eventos/smartcity/004.jpg",
+      "/eventos/smartcity/005.jpg",
+      "/eventos/smartcity/006.jpg",
+      "/eventos/smartcity/007.jpg",
+      "/eventos/smartcity/008.jpg",
+      "/eventos/smartcity/009.jpg",
+      "/eventos/smartcity/010.jpg",
+    ],
+    name: "Smartcity 2024",
   },
   {
     id: 3,
-    images: ["/eventos/evento2.jpeg", "/eventos/evento3.jpeg"],
-    name: "Nome do Evento 3",
-  },
-  {
-    id: 4,
-    images: ["/eventos/evento2.jpeg", "/eventos/evento3.jpeg"],
-    name: "Nome do Evento 4",
+    images: [
+      "/eventos/dermato/001.jpg",
+      "/eventos/dermato/002.jpg",
+      "/eventos/dermato/003.jpg",
+      "/eventos/dermato/004.jpg",
+      "/eventos/dermato/005.jpg",
+      "/eventos/dermato/006.jpg",
+      "/eventos/dermato/007.jpg",
+      "/eventos/dermato/008.jpg",
+      "/eventos/dermato/009.jpg",
+      "/eventos/dermato/010.jpg",
+    ],
+    name: `34º Congresso Brasileiro de Cirurgia Dermatológica`,
   },
 
   // Adicione mais objetos de evento conforme necessário
-];
+]
 
 const Popular = () => {
-  const [modalOpen, setModalOpen] = useState(false); // Estado para controlar a abertura do modal
-  const [currentEvent, setCurrentEvent] = useState(null); // Estado para controlar o evento atual selecionado
+  const [modalOpen, setModalOpen] = useState(false) // Estado para controlar a abertura do modal
+  const [currentEvent, setCurrentEvent] = useState(null) // Estado para controlar o evento atual selecionado
 
   const openModal = (event) => {
-    setCurrentEvent(event);
-    setModalOpen(true);
-  };
+    setCurrentEvent(event)
+    setModalOpen(true)
+  }
 
   const closeModal = () => {
-    setCurrentEvent(null);
-    setModalOpen(false);
-  };
+    setCurrentEvent(null)
+    setModalOpen(false)
+  }
 
   return (
     <section className="py-2 mb-12 mt-8">
-
       <div className="container mx-auto">
         <h2 className="text-center">PORTFOLIO</h2>
-        <p className="text-center mb-4" style={{ fontSize: '1.4em' }}>Confira alguns dos nossos trabalhos</p>
+        <p className="text-center mb-4" style={{ fontSize: "1.4em" }}>
+          Confira alguns dos nossos trabalhos
+        </p>
         <div className="slider-container">
           {events.map((event) => (
             <div
               key={event.id}
-              className="image-container"
+              className="image-container w-[340px]"
               onClick={() => openModal(event)}
             >
-              <img src={event.images[0]} alt={event.name} />
+              <img
+                className="max-h-[250px] object-cover"
+                src={event.images[0]}
+                alt={event.name}
+              />
               <div className="image-overlay">
-                <h3 className="event-name">{event.name}</h3>
+                <h3 className="event-name text-center max-w-[300px]">
+                  {event.name}
+                </h3>
               </div>
             </div>
           ))}
@@ -79,7 +116,11 @@ const Popular = () => {
               >
                 {currentEvent.images.map((image, index) => (
                   <div key={index}>
-                    <img src={image} alt={currentEvent.name} />
+                    <img
+                      src={image}
+                      className="max-h-[560px] object-cover"
+                      alt={currentEvent.name}
+                    />
                   </div>
                 ))}
               </Carousel>
@@ -96,7 +137,6 @@ const Popular = () => {
         }
         .image-container {
           position: relative;
-          width: 200px; /* Definir largura da imagem */
           height: auto; /* Altura ajustada automaticamente para manter a proporção */
           margin-bottom: 20px; /* Adicionar margem entre as imagens */
         }
@@ -170,10 +210,10 @@ const Popular = () => {
       `}</style>
 
       <div>
-          <Infos />
+        <Infos />
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Popular;
+export default Popular
