@@ -2,10 +2,10 @@
 module.exports = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{js,jsx}',
-    './components/**/*.{js,jsx}',
-    './app/**/*.{js,jsx}',
-    './src/**/*.{js,jsx}',
+    "./pages/**/*.{js,jsx}",
+    "./components/**/*.{js,jsx}",
+    "./app/**/*.{js,jsx}",
+    "./src/**/*.{js,jsx}",
   ],
   prefix: "",
   theme: {
@@ -14,24 +14,25 @@ module.exports = {
       padding: "15px",
     },
     screens: {
-      sm: '640px',
-      md: '768px',
-      lg: '960px',
-      xl: '1440px',
+      vsm: "376px",
+      sm: "640px",
+      md: "768px",
+      lg: "960px",
+      xl: "1440px",
     },
     fontFamily: {
-      rajdhani: 'var(--font-rajdhani)'
+      rajdhani: "var(--font-rajdhani)",
     },
     extend: {
       colors: {
         primary: {
           DEFAULT: "#222222",
-          hover: '#2f2f2f',
+          hover: "#2f2f2f",
         },
         accent: {
           DEFAULT: "#1885ad",
-          hover: '#5eb4d3',
-        }
+          hover: "#5eb4d3",
+        },
       },
       keyframes: {
         "accordion-down": {
