@@ -17,8 +17,7 @@ const Hero = () => {
             />
           </div>
           <h1 className="text-[44px] mx-auto lg:mx-0 text-center lg:text-left lg:text-[62px] max-w-[666px] font-extrabold">
-            Locação de Móveis{" "}
-            <span className="underline text-accent">para feiras e eventos</span>
+            Locação de Móveis para feiras e eventos
           </h1>
           <p className="lg:text-2xl text-center lg:text-left text-lg mx-auto lg:mx-0 mt-7 max-w-[374px] font-medium">
             A satisfação do seu cliente é o melhor projeto para a sua empresa
